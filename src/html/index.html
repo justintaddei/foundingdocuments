@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>United States Constitution</title>
+
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#db7093" />
+
+    <script>
+      (function() {
+        var d = document;
+        var c = d.createElement("script");
+        if (!("noModule" in c) && "onbeforeload" in c) {
+          var s = false;
+          d.addEventListener(
+            "beforeload",
+            function(e) {
+              if (e.target === c) {
+                s = true;
+              } else if (!e.target.hasAttribute("nomodule") || !s) {
+                return;
+              }
+              e.preventDefault();
+            },
+            true
+          );
+
+          c.type = "module";
+          c.src = ".";
+          d.head.appendChild(c);
+          c.remove();
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <script src="/webcomponents-loader.js"></script>
+    <script defer src="/js/polyfills.js"></script>
+    <script defer type="module" src="/es6/index.js"></script>
+    <script defer nomodule src="/js/index.js"></script>
+    <script>
+      // Check to make sure the browser supports service workers
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/js/service-worker.js")
+          .then(() => {
+            console.log("Service worker registered");
+          })
+          .catch(err => {
+            console.log("Service worker registration failed: " + err);
+          });
+      }
+    </script>
+  </body>
+</html>

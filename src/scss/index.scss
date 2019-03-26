@@ -1,0 +1,18 @@
+@import "vars/colors";
+@import "vars/sizes";
+@import "vars/fonts";
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@import "typography";
+@import "layout";
