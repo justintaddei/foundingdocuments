@@ -1,0 +1,27 @@
+<textarea name="" id="edit" cols="30" rows="10"></textarea>
+<input type="text" />
+<script>
+  document.querySelector("#edit").addEventListener("input", e => {
+    let val = e.target.value;
+    val = val.replace(
+      RegExp(`<\/?${document.querySelector("input").value}>`, "gi"),
+      ""
+    );
+    val = val.split("<br>");
+
+    navigator.clipboard
+      .writeText(
+        `
+        <h3>${val[0]}</h3><p>${val[1]}</p>
+      `
+      )
+      .then(
+        function() {
+          document.querySelector("#edit").value = "";
+        },
+        function(err) {
+          document.querySelector("#edit").value = "Error";
+        }
+      );
+  });
+</script>

@@ -12,7 +12,19 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background: $paper;
+}
+
+main {
+  position: relative;
+  width: calc(100% - 400px);
+  margin: 0 0 0 400px;
+
+  article {
+    padding: 24px;
+  }
 }
 
 @import "typography";
 @import "layout";
+@import "./components/aside";

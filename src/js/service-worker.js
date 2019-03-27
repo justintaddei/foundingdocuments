@@ -1,15 +1,15 @@
-const CACHE_NAME = 'mpwa-cache-v1';
+const CACHE_NAME = "mpwa-cache-v1";
 const urlsToCache = [
-  '/',
-  '/assets/style.css',
-  '/assets/index.js',
-  '/assets/prism.js',
-  '/assets/img/pwa-stats.png',
-  '/assets/img/bing-store.jpg',
+  "/",
+  "/assets/style.css",
+  "/assets/index.js",
+  "/assets/prism.js",
+  "/assets/img/pwa-stats.png",
+  "/assets/img/bing-store.jpg"
 ];
 
 // Listen for the install event, which fires when the service worker is installing
-self.addEventListener('install', event => {
+self.addEventListener("install", event => {
   // Ensures the install event doesn't complete until after the cache promise resolves
   // This is so we don't move on to other events until the critical initial cache is done
   event.waitUntil(
@@ -21,8 +21,8 @@ self.addEventListener('install', event => {
 // Listen for the activate event, which is fired after installation
 // Activate is when the service worker actually takes over from the previous
 // version, which is a good time to clean up old caches
-self.addEventListener('activate', event => {
-  console.log('Finally active. Ready to serve!');
+self.addEventListener("activate", event => {
+  console.log("Finally active. Ready to serve!");
   event.waitUntil(
     // Get the keys of all the old caches
     caches
@@ -42,7 +42,7 @@ self.addEventListener('activate', event => {
 
 // Listen for browser fetch events. These fire any time the browser tries to load
 // any outside resources
-self.addEventListener('fetch', function(event) {
+self.addEventListener("fetch", function(event) {
   // This lets us control the response
   // We pass in a promise that resolves with a response object
   event.respondWith(
@@ -50,7 +50,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request).then(response => {
       // It's in the cache! Serve the response straight from there
       if (response) {
-        console.log('Serving response from the cache');
+        console.log("Serving response from the cache");
         return response;
       }
       // If it's not in the cache we make a fetch request for the resource
@@ -66,7 +66,7 @@ self.addEventListener('fetch', function(event) {
             return response;
           })
           .catch(response => {
-            console.log('Fetch failed, sorry.');
+            console.log("Fetch failed, sorry.");
           })
       );
     })

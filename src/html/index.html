@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico|Roboto"
+      rel="stylesheet"
+    />
     <title>United States Constitution</title>
 
     <link rel="stylesheet" href="/css/index.css" />
@@ -40,6 +44,8 @@
   </head>
 
   <body>
+    <us-constitution></us-constitution>
+
     <script src="/webcomponents-loader.js"></script>
     <script defer src="/js/polyfills.js"></script>
     <script defer type="module" src="/es6/index.js"></script>
@@ -48,7 +54,7 @@
       // Check to make sure the browser supports service workers
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("/js/service-worker.js")
+          .register("/es6/service-worker.js")
           .then(() => {
             console.log("Service worker registered");
           })

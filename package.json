@@ -1,7 +1,7 @@
 {
-  "name": "dannytaddeimusicproduction",
+  "name": "usconstitution",
   "version": "1.0.0",
-  "description": "Danny Taddei Music Production",
+  "description": "United States Constitution",
   "main": "src/index.php",
   "scripts": {
     "build": "gulp build"
@@ -38,6 +38,7 @@
     "custom-event-polyfill": "^1.0.6",
     "events-polyfill": "^2.1.0",
     "riot-route": "^3.1.4",
-    "smoothscroll-polyfill": "^0.4.3"
+    "smoothscroll-polyfill": "^0.4.3",
+    "whatwg-fetch": "^3.0.0"
   }
 }

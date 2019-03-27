@@ -119,7 +119,7 @@ function polyfills() {
 
 function watch() {
   browserSync.init({
-    proxy: "localhost",
+    server: "build",
     open: false
   });
 
@@ -140,4 +140,4 @@ function clean() {
 exports.clean = clean;
 exports.build = gulp.parallel(js, es6, scss, imgs, html, json, polyfills);
 exports.refresh = gulp.series(clean, exports.build);
-exports.watch = watch;
+exports.watch = gulp.series(exports.refresh, watch);
