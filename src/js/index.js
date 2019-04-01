@@ -5,16 +5,16 @@ import "./components/bookmark-manager";
 import { seek } from "./utils/dom";
 import { toast } from "./components/toast";
 
-route("/preamble", () => {
+route("/constitution/preamble", () => {
   seek(document.querySelector("#preamble"));
 });
 
-route("/article/*", article => {
+route("/constitution/article/*", article => {
   const articleHeading = document.querySelector(`#article${article}`);
   seek(articleHeading);
 });
 
-route("/article/*/*", (article, sectionNumber) => {
+route("/constitution/article/*/*", (article, sectionNumber) => {
   const articleHeading = document.querySelector(`#article${article}`);
 
   if (!articleHeading) return;
@@ -33,7 +33,7 @@ document.querySelector("aside").addEventListener("click", e => {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("./service-worker.js")
+    .register("/constitution/service-worker.js")
     .then(() => {
       if (!localStorage.getItem("offline-prompt")) {
         toast("Available offline", { label: "Ok" }, 10000);
