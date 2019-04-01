@@ -5,16 +5,16 @@ import "./components/bookmark-manager";
 import { seek } from "./utils/dom";
 import { toast } from "./components/toast";
 
-route("/constitution/preamble", () => {
+route("/preamble", () => {
   seek(document.querySelector("#preamble"));
 });
 
-route("/constitution/article/*", article => {
+route("/article/*", article => {
   const articleHeading = document.querySelector(`#article${article}`);
   seek(articleHeading);
 });
 
-route("/constitution/article/*/*", (article, sectionNumber) => {
+route("/article/*/*", (article, sectionNumber) => {
   const articleHeading = document.querySelector(`#article${article}`);
 
   if (!articleHeading) return;
@@ -44,5 +44,5 @@ if ("serviceWorker" in navigator) {
       console.log("Service worker registration failed: " + err);
     });
 }
-route.base("/constitution");
+route.base("/constitution/");
 route.start(true);

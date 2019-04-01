@@ -1,15 +1,15 @@
 var ASSETS = [
-  "/",
-  "/es6/index.js",
-  "/js/index.js",
-  "/webcomponents-loader.js",
-  "/bundles/webcomponents-ce.js",
-  "/bundles/webcomponents-sd-ce-pf.js",
-  "/bundles/webcomponents-sd-ce.js",
-  "/bundles/webcomponents-sd.js",
-  "/js/polyfills.js",
-  "/css/index.css",
-  "/imgs/seal.svg"
+  "/constitution/",
+  "/constitution/es6/index.js",
+  "/constitution/js/index.js",
+  "/constitution/webcomponents-loader.js",
+  "/constitution/bundles/webcomponents-ce.js",
+  "/constitution/bundles/webcomponents-sd-ce-pf.js",
+  "/constitution/bundles/webcomponents-sd-ce.js",
+  "/constitution/bundles/webcomponents-sd.js",
+  "/constitution/js/polyfills.js",
+  "/constitution/css/index.css",
+  "/constitution/imgs/seal.svg"
 ];
 
 var VERSION = "1.0.0";
