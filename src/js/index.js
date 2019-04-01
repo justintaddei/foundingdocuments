@@ -44,5 +44,5 @@ if ("serviceWorker" in navigator) {
       console.log("Service worker registration failed: " + err);
     });
 }
-
+route.base("/constitution");
 route.start(true);
