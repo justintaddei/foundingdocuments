@@ -33,7 +33,7 @@ document.querySelector("aside").addEventListener("click", e => {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/service-worker.js")
+    .register("./service-worker.js")
     .then(() => {
       if (!localStorage.getItem("offline-prompt")) {
         toast("Available offline", { label: "Ok" }, 10000);
