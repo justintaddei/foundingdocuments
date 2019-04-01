@@ -1,0 +1,96 @@
+#bookmarksManager {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 100%;
+  background: $brown;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  padding: 100px 0 0 0;
+  color: #fff;
+  will-change: transform;
+  transition: 0.2s ease;
+  transform: translate(110%, 0);
+  overflow-y: auto;
+
+  h2 {
+    padding: 16px 0;
+    margin: 0 16px;
+    border-bottom: 1px solid currentColor;
+    position: relative;
+    height: 86px;
+
+    button {
+      border: none;
+      background: none;
+      width: 40px;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      right: 16px;
+      top: 23px;
+      color: #fff;
+      &:hover {
+        color: #f00;
+      }
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  bookmark-preview {
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 0 16px;
+    position: relative;
+  }
+
+  .if-editing-bookmarks,
+  &.editing .if-not-editing-bookmarks {
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  }
+
+  &.editing .if-editing-bookmarks,
+  .if-not-editing-bookmarks {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  }
+
+  &.editing bookmark-preview {
+    color: rgba(255, 255, 255, 0.5);
+    &::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      display: block;
+      background: url("/imgs/round-delete_forever-24px.svg?embed");
+      background-size: cover;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+      animation: delete-fade-in 0.2s both;
+
+      @keyframes delete-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.bookmarks-drawer-active #bookmarksManager {
+  transform: none;
+}

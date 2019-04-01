@@ -1,0 +1,87 @@
+article {
+  padding: 24px;
+
+  @media screen and (max-width: 360px) {
+    padding: 10px;
+  }
+
+  h1,
+  h2 {
+    font-family: $main-font;
+    color: rgba(0, 0, 0, 0.5);
+    strong {
+      color: #000;
+      font-family: $header-font;
+    }
+  }
+
+  h1 {
+    position: static;
+    display: inline;
+    strong {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    @media screen and (max-width: 1300px) {
+      font-size: 25px;
+      strong {
+        font-size: 40px;
+        position: static;
+        z-index: 0;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      text-align: center;
+      display: block;
+      strong {
+        display: block;
+      }
+    }
+  }
+  h2 {
+    padding: 0 24px;
+    @media screen and (max-width: 1300px) {
+      font-size: 20px;
+      strong {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .section-marker {
+    opacity: 0;
+    margin: 0;
+    position: relative;
+    top: -100px;
+    pointer-events: none;
+  }
+  section {
+    counter-reset: section;
+    padding: 0 48px;
+    @media screen and (max-width: 500px) {
+      padding: 0;
+    }
+  }
+
+  h3 {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+  }
+  h3::before {
+    counter-increment: section;
+    content: "¶" counter(section) " ";
+    opacity: 0.5;
+  }
+
+  p {
+    padding-top: 0;
+    line-height: 1.5em;
+  }
+
+  us-def {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+  }
+}

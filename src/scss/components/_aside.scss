@@ -2,11 +2,25 @@ aside {
   width: 400px;
   height: 100vh;
   overflow: auto;
-  background: #222;
+  background: $brown;
   color: #fff;
   top: 0;
   left: 0;
   position: fixed;
+  z-index: 4;
+
+  @media screen and (max-width: 1300px) {
+    padding-top: 100px;
+    will-change: transform;
+    transition: 0.2s ease;
+    transform: translate(-110%, 0);
+    box-shadow: 0 0 2pc rgba(0, 0, 0, 0.8);
+    z-index: 1;
+
+    .nav-open & {
+      transform: none;
+    }
+  }
 
   ul {
     list-style: none;

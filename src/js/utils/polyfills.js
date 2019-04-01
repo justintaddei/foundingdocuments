@@ -6,4 +6,5 @@ import "./polyfills/intersectionobserver-polyfill.js";
 import "./polyfills/re-gen";
 import "./polyfills/ric-polyfill";
 import "events-polyfill/src/ListenerOptions";
+import "./polyfills/classlist";
 smoothscroll.polyfill();
