@@ -4,7 +4,7 @@
   "description": "United States Constitution",
   "main": "src/index.php",
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build --production"
   },
   "author": "Justin Taddei",
   "license": "Unlicense",

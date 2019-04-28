@@ -12,7 +12,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const cssInlineImages = require("gulp-css-inline-images");
 const browserSync = require("browser-sync").create();
 
-const DEST = {
+let DEST = {
   CSS: "./build/css",
   JS: "./build/js",
   ES6: "./build/es6",
@@ -21,6 +21,18 @@ const DEST = {
   STATIC: "./build",
   IMGS: "./build/imgs"
 };
+
+if (process.argv.indexOf("--production") === -1) {
+  DEST = {
+    CSS: "./build/constitution/css",
+    JS: "./build/constitution/js",
+    ES6: "./build/constitution/es6",
+    JSON: "./build/constitution/json",
+    HTML: "./build/constitution",
+    STATIC: "./build/constitution",
+    IMGS: "./build/constitution/imgs"
+  };
+}
 
 function js() {
   return gulp
