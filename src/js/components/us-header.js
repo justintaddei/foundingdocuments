@@ -315,7 +315,13 @@ class UsHeaderElement extends HTMLElement {
         ? range.endContainer
         : range.endContainer.parentElement;
 
-    if (!pStart.closest("article") || !pEnd.closest("article")) {
+    if (
+      !(
+        pStart.closest("article") ||
+        pStart.closest("#declarationOfIndependence")
+      ) ||
+      !(pEnd.closest("article") || pEnd.closest("#declarationOfIndependence"))
+    ) {
       this.selecting = false;
       return;
     }

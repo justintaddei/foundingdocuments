@@ -14,8 +14,8 @@ const readingObserver = new IntersectionObserver(
   }
 );
 
-window.addEventListener("beforeunload", () => {
-  let article = 0;
+document.addEventListener("beforeunload", () => {
+  /* let article = 0;
   let section = 0;
   let paragraph = 0;
 
@@ -42,9 +42,12 @@ window.addEventListener("beforeunload", () => {
     article = [...offset.parentNode.querySelectorAll("article")].indexOf(
       offset
     );
-  }
+  } */
+  localStorage.setItem("lastRead", window.pageYOffset);
+});
 
-  localStorage.setItem("lastRead", [article, section, paragraph]);
+document.addEventListener("pointerup", () => {
+  localStorage.setItem("lastRead", window.pageYOffset);
 });
 
 class USConstitutionElement extends HTMLElement {
@@ -57,45 +60,47 @@ class USConstitutionElement extends HTMLElement {
   }
 
   async continueWhereLastRead() {
-    const targets = this.querySelectorAll("h1, h2, h3");
+    // const targets = this.querySelectorAll("h1, h2, h3");
 
-    targets.forEach(target => readingObserver.observe(target));
+    // targets.forEach(target => readingObserver.observe(target));
 
     let lastRead = localStorage.getItem("lastRead");
     if (!lastRead) return;
 
-    setTimeout(() => {
-      toast("Continue where you left off?", {
-        label: "Go",
-        action: () => {
-          const [article, section, paragraph] = lastRead
-            .split(",")
-            .map(s => parseInt(s, 10));
+    toast("Continue where you left off?", {
+      label: "Go",
+      action: () => {
+        // const [article, section, paragraph] = lastRead
+        //   .split(",")
+        //   .map(s => parseInt(s, 10));
 
-          console.log("[article, section, paragraph] :", [
-            article,
-            section,
-            paragraph
-          ]);
+        // console.log("[article, section, paragraph] :", [
+        //   article,
+        //   section,
+        //   paragraph
+        // ]);
 
-          let articleElem, sectionElem, paragraphElem;
-          articleElem = this.querySelectorAll("article")[article];
+        // let articleElem, sectionElem, paragraphElem;
+        // articleElem = this.querySelectorAll("article")[article];
 
-          sectionElem = articleElem.querySelectorAll("section")[section];
+        // sectionElem = articleElem.querySelectorAll("section")[section];
 
-          if (sectionElem) {
-            paragraphElem = sectionElem.querySelectorAll("h3")[paragraph];
-            if (paragraphElem) return seek(paragraphElem);
+        // if (sectionElem) {
+        //   paragraphElem = sectionElem.querySelectorAll("h3")[paragraph];
+        //   if (paragraphElem) return seek(paragraphElem);
 
-            const sm = previous(sectionElem, ".section-marker");
-            if (sm) return seek(sm);
-          }
+        //   const sm = previous(sectionElem, ".section-marker");
+        //   if (sm) return seek(sm);
+        // }
 
-          let h1 = articleElem.querySelector("h1");
-          return seek(previous(h1, "hr[id]"));
-        }
-      });
-    }, 1500);
+        // let h1 = articleElem.querySelector("h1");
+        // return seek(previous(h1, "hr[id]"));
+        window.scrollTo({
+          top: parseFloat(lastRead, 10),
+          behavior: "smooth"
+        });
+      }
+    });
   }
 }
 

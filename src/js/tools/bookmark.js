@@ -62,7 +62,7 @@ export function restoreBookmarkSelectionBounds(bookmark) {
  * Creates a bookmark
  * @param {Selection} selection
  */
-export function createBookmark(selection) {
+function computeBookmark(selection) {
   if (!selection.rangeCount) return toast("No text selected");
 
   hideBookmarkHighlights();
@@ -79,8 +79,6 @@ export function createBookmark(selection) {
   const startContainerId = computeIdFromElement(originalData.startContainer);
   const endContainerId = computeIdFromElement(originalData.endContainer);
 
-  const bookmarks = getBookmarks();
-
   const bookmark = {
     time: Date.now(),
     text: originalData.text,
@@ -92,10 +90,22 @@ export function createBookmark(selection) {
     }
   };
 
+  return bookmark;
+}
+
+/**
+ * Creates a bookmark
+ * @param {Selection} selection
+ */
+export function createBookmark(selection) {
+  const bookmark = computeBookmark(selection);
+
+  const bookmarks = getBookmarks();
+
   bookmarks.push(bookmark);
 
   saveBookmarks(bookmarks);
-  showBookmarkHighlights();
+  //FIXME: showBookmarkHighlights();
 }
 
 function rangeIntersectsNode(node, range) {
@@ -193,15 +203,7 @@ export function showBookmark(bookmark) {
 
   const range = document.createRange();
 
-  // console.log(
-  //   bookmark.offset.startNode.textContent,
-  //   "|",
-  //   bookmark.offset.endNode.textContent
-  // );
-  // if (bookmark.offset.startNode.textContent.length < bookmark.offset.start)
-  //   bookmark.offset.start = bookmark.offset.startNode.textContent.length;
-  // if (bookmark.offset.endNode.textContent.length < bookmark.offset.end)
-  //   bookmark.offset.end = bookmark.offset.endNode.textContent.length;
+  console.log("restored bookmark", bookmark);
 
   range.setStart(bookmark.offset.startNode, bookmark.offset.start);
   range.setEnd(bookmark.offset.endNode, bookmark.offset.end);
@@ -214,6 +216,7 @@ export function showBookmark(bookmark) {
 }
 
 export function showBookmarkHighlights() {
+  throw new Error("FIXME: Cannot show all bookmarks without risk of overlap.");
   dispatchVisibilityChange(true);
   window.is_highlighting_bookmarks = true;
   const bookmarks = getBookmarks();

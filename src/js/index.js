@@ -1,12 +1,16 @@
 import route from "riot-route";
 import "./components/us-constitution";
 import "./components/us-header";
+import "./components/us-dfn";
 import "./components/bookmark-manager";
 import { seek } from "./utils/dom";
 import { toast } from "./components/toast";
 
 route("/preamble", () => {
   seek(document.querySelector("#preamble"));
+});
+route("/declaration-of-independence", () => {
+  seek(document.querySelector("#declarationOfIndependence"));
 });
 
 route("/article/*", article => {

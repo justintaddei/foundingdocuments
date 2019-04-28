@@ -3,8 +3,9 @@ import {
   getBookmarks,
   restoreBookmarkSelectionBounds,
   saveBookmarks,
-  showBookmarkHighlights,
-  hideBookmarkHighlights
+  showBookmarkHighlights as showBookmarkHighlight,
+  hideBookmarkHighlights,
+  showBookmark
 } from "../tools/bookmark";
 import { toast } from "./toast";
 
@@ -41,7 +42,8 @@ export class BookmarkPreviewElement extends HTMLElement {
   }
 
   scrollToHighlight() {
-    if (!bookmarksVisible()) showBookmarkHighlights();
+    hideBookmarkHighlights();
+    if (!bookmarksVisible()) showBookmark(this.bookmark);
 
     const mark = document.querySelector(
       `mark.bookmark-highlight[data-id="${this.bookmark.time}"]`
