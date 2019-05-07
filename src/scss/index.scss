@@ -28,12 +28,19 @@ main {
 }
 
 .seal_heading {
-  width: 300px;
   height: 300px;
   filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.8));
 
   @media screen and (max-width: 600px) {
     width: 150px;
+    height: 150px;
+  }
+}
+.gadsden_heading {
+  height: 300px;
+  filter: drop-shadow(0 0px 10px rgba(0, 0, 0, 0.8));
+
+  @media screen and (max-width: 600px) {
     height: 150px;
   }
 }
@@ -61,15 +68,15 @@ mark {
     }
   }
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: -250px;
-    left: 0;
-  }
+  // &::before {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   width: 0;
+  //   height: 0;
+  //   top: -250px;
+  //   left: 0;
+  // }
 }
 
 hr[id] {
@@ -91,3 +98,4 @@ hr[id] {
 @import "./components/header";
 @import "./components/toast";
 @import "./components/bookmarks";
+@import "./components/explanation";

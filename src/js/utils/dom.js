@@ -4,7 +4,14 @@
  */
 export function seek(elem) {
   if (!elem) return;
-  elem.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const top = elem.getBoundingClientRect().top + window.pageYOffset;
+
+  window.scrollTo({
+    top: top - Math.min(200, window.innerHeight / 3),
+    behavior: "smooth"
+  });
+  // elem.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 /**

@@ -1,0 +1,78 @@
+us-dfn {
+  cursor: pointer;
+
+  &.dfn-highlighted {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.dfn-panel {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  background: $brown;
+  color: #fff;
+  position: fixed;
+  font-size: 18px;
+  line-height: 1.5em;
+  top: 110px;
+  right: 15px;
+  transform: translate(25%, 0);
+  will-change: transform;
+  opacity: 0;
+  transition: 0.25s ease;
+  z-index: 100;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  pointer-events: none;
+
+  &::before {
+    content: "x";
+    font-family: $main-font;
+    font-size: 18px;
+    width: 23.5px;
+    height: 23.5px;
+    position: absolute;
+    left: -23.5px;
+    top: 0;
+    background: $brown;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 650px) {
+    max-width: 100%;
+    right: 0;
+    border-radius: 0;
+    top: 90px;
+    width: 100%;
+
+    &::before {
+      font-size: 25px;
+      left: 0;
+      background: red;
+      border-radius: 50%;
+
+      padding: 10px;
+      position: relative;
+      float: left;
+      margin: 0 15px 0 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    top: 60px;
+  }
+
+  &.visible {
+    pointer-events: all;
+    opacity: 1;
+    transform: none;
+  }
+}

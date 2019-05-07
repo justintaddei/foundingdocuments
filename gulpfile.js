@@ -131,7 +131,7 @@ function polyfills() {
 
 function watch() {
   browserSync.init({
-    server: "build",
+    proxy: "localhost",
     open: false
   });
 

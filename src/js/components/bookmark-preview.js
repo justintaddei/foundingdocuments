@@ -1,13 +1,12 @@
 import {
   bookmarksVisible,
   getBookmarks,
-  restoreBookmarkSelectionBounds,
-  saveBookmarks,
-  showBookmarkHighlights as showBookmarkHighlight,
   hideBookmarkHighlights,
+  saveBookmarks,
   showBookmark
 } from "../tools/bookmark";
 import { toast } from "./toast";
+import { seek } from "../utils/dom";
 
 const html = String.raw;
 
@@ -15,7 +14,6 @@ export class BookmarkPreviewElement extends HTMLElement {
   constructor(bookmark) {
     super();
 
-    restoreBookmarkSelectionBounds(bookmark);
     this.bookmark = bookmark;
 
     this.innerHTML = html`
@@ -57,10 +55,7 @@ export class BookmarkPreviewElement extends HTMLElement {
       return;
     }
 
-    mark.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    seek(mark);
   }
 }
 

@@ -31,8 +31,24 @@ h3 {
 p {
   font-size: 25px;
   padding: 24px;
+  &.center {
+    text-align: center;
+    display: block;
+  }
 }
 
-article {
+.smaller {
+  font-size: 18px;
+}
+
+article,
+#declarationOfIndependence,
+.amendments,
+.intro {
   user-select: text;
+}
+
+.john {
+  font-weight: bold;
+  font-family: $header-font;
 }

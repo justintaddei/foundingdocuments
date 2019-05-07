@@ -105,6 +105,12 @@ export function createBookmark(selection) {
   bookmarks.push(bookmark);
 
   saveBookmarks(bookmarks);
+  toast("Bookmark saved", {
+    label: "View",
+    action() {
+      showBookmark(bookmark);
+    }
+  });
   //FIXME: showBookmarkHighlights();
 }
 
@@ -196,6 +202,8 @@ export function hideBookmarkHighlights() {
 }
 
 export function showBookmark(bookmark) {
+  bookmark = JSON.parse(JSON.stringify(bookmark));
+  restoreBookmarkSelectionBounds(bookmark);
   dispatchVisibilityChange(true);
   window.is_highlighting_bookmarks = true;
   const selection = window.getSelection();

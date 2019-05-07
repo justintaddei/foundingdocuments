@@ -37,6 +37,9 @@ us-header {
   }
   @media screen and (max-width: 600px) {
     overflow: hidden;
+    &.searching {
+      overflow: visible;
+    }
     height: 60px;
 
     align-items: flex-start;
@@ -52,7 +55,7 @@ us-header {
   }
 
   .if-selection {
-    transform: translate(142px, 0) rotate(180deg) scale(0);
+    transform: translate(75px, 0) rotate(180deg) scale(0);
     opacity: 0;
     transition: opacity 0.3s ease 1s, transform 1s ease 0s;
   }
@@ -88,6 +91,8 @@ us-header {
       position: absolute;
       top: 0;
       left: 0;
+      width: 40px;
+      height: 40px;
     }
   }
   #toggleNav {
@@ -193,6 +198,7 @@ us-header {
     .search-container {
       width: calc(100% - 56px);
       pointer-events: auto;
+      overflow: visible;
       @media screen and (max-width: 600px) {
         width: 100%;
         opacity: 1;
@@ -212,4 +218,8 @@ us-header {
   opacity: 1;
   transform: none;
   transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+}
+
+#toggleBookmarks {
+  display: none !important;
 }

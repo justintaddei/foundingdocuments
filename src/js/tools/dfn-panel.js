@@ -3,7 +3,7 @@ dfnPanel.classList.add("dfn-panel");
 document.body.appendChild(dfnPanel);
 
 document.addEventListener("click", e => {
-  if (e.target.contains(dfnPanel)) hide();
+  hide();
 });
 
 function show() {

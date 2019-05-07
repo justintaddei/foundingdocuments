@@ -35,6 +35,9 @@ class UsHeaderElement extends HTMLElement {
     }
   }
 
+  /**
+   * @param {boolean} value
+   */
   set bookmarksVisible(value) {
     if (value) {
       this.classList.add("bookmarks-visible");
@@ -42,6 +45,9 @@ class UsHeaderElement extends HTMLElement {
       this.classList.remove("bookmarks-visible");
     }
   }
+  /**
+   * @param {boolean} value
+   */
   set hasBookmarks(value) {
     if (value) {
       this.classList.add("has-bookmarks");
@@ -80,10 +86,15 @@ class UsHeaderElement extends HTMLElement {
     for (const otherActive of document.querySelectorAll("mark.search.active"))
       otherActive.classList.remove("active");
 
+    console.log(
+      'document.querySelectorAll("mark.search") :',
+      document.querySelectorAll("mark.search").length
+    );
     const active = document.querySelectorAll("mark.search")[value - 1];
-    if (active) active.classList.add("active");
-
-    seek(active);
+    if (active) {
+      active.classList.add("active");
+      seek(active);
+    }
   }
   get currentFoundFromSearch() {
     return parseInt(this.querySelector("#searchCurrentNumber").textContent, 10);
@@ -263,7 +274,7 @@ class UsHeaderElement extends HTMLElement {
 
     this.toggle = this.toggle.bind(this);
     this.search = this.search.bind(this);
-    this.seekSearch = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.detectSelection = this.detectSelection.bind(this);
     this.blurSearchIfFocused = this.blurSearchIfFocused.bind(this);
   }
@@ -284,10 +295,17 @@ class UsHeaderElement extends HTMLElement {
 
     this.addEventListener("click", this.handleClick);
 
+    const bookmarkSaveButton = this.querySelector("#saveBookmark");
+    bookmarkSaveButton.addEventListener("mousedown", () => this.saveBookmark());
+    bookmarkSaveButton.addEventListener("touchstart", () =>
+      this.saveBookmark()
+    );
+
     document.addEventListener("mouseup", this.detectSelection);
     document.addEventListener("touchstart", e => e.preventDefault());
     document.addEventListener("touchmove", e => e.preventDefault());
     document.addEventListener("touchcancel", this.detectSelection);
+    document.addEventListener("touchend", this.detectSelection);
     document.addEventListener("keyup", this.detectSelection);
   }
 
@@ -318,9 +336,14 @@ class UsHeaderElement extends HTMLElement {
     if (
       !(
         pStart.closest("article") ||
-        pStart.closest("#declarationOfIndependence")
+        pStart.closest("#declarationOfIndependence") ||
+        pStart.closest(".amendments")
       ) ||
-      !(pEnd.closest("article") || pEnd.closest("#declarationOfIndependence"))
+      !(
+        pEnd.closest("article") ||
+        pEnd.closest("#declarationOfIndependence") ||
+        pEnd.closest(".amendments")
+      )
     ) {
       this.selecting = false;
       return;
@@ -350,7 +373,6 @@ class UsHeaderElement extends HTMLElement {
   handleClick(e) {
     if (e.target.closest("#searchForward")) this.currentFoundFromSearch++;
     else if (e.target.closest("#searchBackward")) this.currentFoundFromSearch--;
-    else if (e.target.closest("#saveBookmark")) this.saveBookmark();
     else if (e.target.closest("#toggleBookmarks"))
       this.toggleBookmarkHighlighting();
     else if (e.target.closest("#viewBookmarks"))
@@ -380,18 +402,28 @@ class UsHeaderElement extends HTMLElement {
   }
 
   clearHighlight() {
-    this.marker.unmark({ className: "search" });
-
-    if (this.searchBar.value.length < 2) this.totalFoundFromSearch = 0;
+    return new Promise(resolve => {
+      this.marker.unmark({
+        className: "search",
+        done() {
+          resolve();
+        }
+      });
+      if (this.searchBar.value.length < 2) this.totalFoundFromSearch = 0;
+    });
   }
 
   search() {
     if (!this.searching) return;
-    this.clearHighlight();
-    if (this.searchBar.value.length < 2) return;
-    requestIdleCallback(() => {
-      this.highlight(this.searchBar.value);
-    });
+    if (this._searchTimeout) clearTimeout(this._searchTimeout);
+
+    this._searchTimeout = setTimeout(async () => {
+      await this.clearHighlight();
+      if (this.searchBar.value.length < 2) return;
+      requestIdleCallback(() => {
+        this.highlight(this.searchBar.value.trim());
+      });
+    }, 100);
   }
 }
 

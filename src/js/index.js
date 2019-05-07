@@ -6,11 +6,21 @@ import "./components/bookmark-manager";
 import { seek } from "./utils/dom";
 import { toast } from "./components/toast";
 
+route("/", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 route("/preamble", () => {
   seek(document.querySelector("#preamble"));
 });
 route("/declaration-of-independence", () => {
   seek(document.querySelector("#declarationOfIndependence"));
+});
+route("/bill-of-rights", () => {
+  seek(document.querySelector("#billOfRights"));
+});
+route("/articles-of-confederation", () => {
+  seek(document.querySelector("#oldPreamble"));
 });
 
 route("/article/*", article => {
@@ -28,6 +38,16 @@ route("/article/*/*", (article, sectionNumber) => {
     .querySelectorAll(".section-marker")[parseInt(sectionNumber, 10) - 1];
 
   seek(section);
+});
+
+route("/amendment/*", amendment => {
+  const amendmentHeading = document.querySelector(`#amendment${amendment}`);
+  seek(amendmentHeading);
+});
+
+route("/confederation/*", article => {
+  const articleHeading = document.querySelector(`#oldArticle${article}`);
+  seek(articleHeading);
 });
 
 document.querySelector("aside").addEventListener("click", e => {
@@ -48,5 +68,6 @@ if ("serviceWorker" in navigator) {
       console.log("Service worker registration failed: " + err);
     });
 }
+
 route.base("/constitution/");
 route.start(true);

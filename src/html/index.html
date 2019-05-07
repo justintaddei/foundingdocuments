@@ -24,6 +24,16 @@
   <meta name="theme-color" content="#db7093" />
 
   <script>
+    var __url = localStorage.getItem('redir_path');
+
+    if (url) {
+      history.replaceState(null, null, __url)
+      localStorage.removeItem('redir_path')
+    }
+  </script>
+
+
+  <script>
     (function () {
       var d = document;
       var c = d.createElement("script");
@@ -55,7 +65,10 @@
   <us-constitution>
     <aside>
       <ul>
+        <li><a href="/constitution/">Introduction</a></li>
+        <hr>
         <li><a href="/constitution/declaration-of-independence">Declaration of Independence</a></li>
+        <hr>
         <li><a href="/constitution/preamble">Preamble</a></li>
         <li>
           <a href="/constitution/article/I">Article I</a>
@@ -143,10 +156,107 @@
         <li><a href="/constitution/article/V">Article V</a></li>
         <li><a href="/constitution/article/VI">Article VI</a></li>
         <li><a href="/constitution/article/VII">Article VII</a></li>
+        <hr>
+        <li><a href="/constitution/bill-of-rights">Bill of Rights</a>
+          <ul>
+            <a href="/constitution/amendment/1">
+              <li>Amendment 1</li>
+            </a>
+            <a href="/constitution/amendment/2">
+              <li>Amendment 2</li>
+            </a>
+            <a href="/constitution/amendment/3">
+              <li>Amendment 3</li>
+            </a>
+            <a href="/constitution/amendment/4">
+              <li>Amendment 4</li>
+            </a>
+            <a href="/constitution/amendment/5">
+              <li>Amendment 5</li>
+            </a>
+            <a href="/constitution/amendment/6">
+              <li>Amendment 6</li>
+            </a>
+            <a href="/constitution/amendment/7">
+              <li>Amendment 7</li>
+            </a>
+            <a href="/constitution/amendment/8">
+              <li>Amendment 8</li>
+            </a>
+            <a href="/constitution/amendment/9">
+              <li>Amendment 9</li>
+            </a>
+            <a href="/constitution/amendment/10">
+              <li>Amendment 10</li>
+            </a>
+          </ul>
+        </li>
+        <hr>
+        <li><a href="/constitution/amendment/11">Amendment 11</a></li>
+        <li><a href="/constitution/amendment/12">Amendment 12</a></li>
+        <li><a href="/constitution/amendment/13">Amendment 13</a></li>
+        <li><a href="/constitution/amendment/14">Amendment 14</a></li>
+        <li><a href="/constitution/amendment/15">Amendment 15</a></li>
+        <li><a href="/constitution/amendment/16">Amendment 16</a></li>
+        <li><a href="/constitution/amendment/17">Amendment 17</a></li>
+        <li><a href="/constitution/amendment/18">Amendment 18</a></li>
+        <li><a href="/constitution/amendment/19">Amendment 19</a></li>
+        <li><a href="/constitution/amendment/20">Amendment 20</a></li>
+        <li><a href="/constitution/amendment/21">Amendment 21</a></li>
+        <li><a href="/constitution/amendment/22">Amendment 22</a></li>
+        <li><a href="/constitution/amendment/23">Amendment 23</a></li>
+        <li><a href="/constitution/amendment/24">Amendment 24</a></li>
+        <li><a href="/constitution/amendment/25">Amendment 25</a></li>
+        <li><a href="/constitution/amendment/26">Amendment 26</a></li>
+        <li><a href="/constitution/amendment/27">Amendment 27</a></li>
+        <hr>
+        <li><a href="/constitution/articles-of-confederation">Articles of Confederation</a></li>
+        <li><a href="/constitution/articles-of-confederation">Preamble</a></li>
+        <li><a href="/constitution/confederation/I">Article I</a></li>
+        <li><a href="/constitution/confederation/II">Article II</a></li>
+        <li><a href="/constitution/confederation/III">Article III</a></li>
+        <li><a href="/constitution/confederation/IV">Article IV</a></li>
+        <li><a href="/constitution/confederation/V">Article V</a></li>
+        <li><a href="/constitution/confederation/VI">Article VI</a></li>
+        <li><a href="/constitution/confederation/VII">Article VII</a></li>
+        <li><a href="/constitution/confederation/VIII">Article VIII</a></li>
+        <li><a href="/constitution/confederation/IX">Article IX</a></li>
+        <li><a href="/constitution/confederation/X">Article X</a></li>
+        <li><a href="/constitution/confederation/XI">Article XI</a></li>
+        <li><a href="/constitution/confederation/XII">Article XII</a></li>
+        <li><a href="/constitution/confederation/XIII">Article XIII</a></li>
+        <hr>
+        <li><a href="/constitution/about">About the App</a></li>
       </ul>
     </aside>
     <main>
       <us-header></us-header>
+      <div class="intro">
+        <div class="center">
+          <img class="seal_heading" src="/constitution/imgs/us_flag.svg" alt="The Flag of the U.S." />
+        </div>
+        <h1 class="center usc">
+          U.S. Founding Documents
+        </h1>
+        <p>
+          This resource is dedicated to the Founding Fathers and the wisdom they gave us, the Revolutionary Soldiers for
+          securing
+          that wisdom, and to all the brave men and women that have given their lives for the preservation of the values
+          herein.
+        </p>
+        <p>
+          Its goal is to provide a convenient place to read and study our founding documents. Below you will find the
+          Declaration
+          of Independence, the Constitution of the United States, the Bill of Rights, amendments 11 through 27, as well
+          as the
+          predecessor to the Constitution—the Articles of Confederation.
+        </p>
+        <p>
+          Throughout these documents, you will notice many underlined words and phrases. Clicking on them will display
+          their
+          explanation. Highlight any text to share or bookmark it.
+        </p>
+      </div>
       <div id="declarationOfIndependence">
         <div class="center">
           <img class="gadsden_heading" src="/constitution/imgs/gadsden.svg" alt="The Seal of the U.S." />
@@ -2814,6 +2924,1788 @@
             </tbody>
           </table>
         </div>
+      </div>
+      <hr id="billOfRights">
+      <h1 class="center usc">Preamble to the Bill of Rights</h1>
+      <h2 class="center">*Congress of the United States</h2>
+      <div class="amendments">
+        <p class="center">begun and held at the City of New-York, on Wednesday the fourth of March, one thousand seven
+          hundred and eighty nine.</p>
+        <p class="center">THE Conventions of a number of the States, having at the time of their adopting
+          the Constitution, expressed a desire, in order to prevent misconstruction or abuse of its powers, that further
+          declaratory and restrictive clauses should be added: And as extending the ground of public confidence in the
+          Government, will best ensure the beneficent ends of its institution.</p>
+        <p class="center">RESOLVED by the Senate and
+          House of Representatives of the United States of America, in Congress assembled, two thirds of both Houses
+          concurring, that the following Articles be proposed to the Legislatures of the several States, as amendments
+          to
+          the Constitution of the United States, all, or any of which Articles, when ratified by three fourths of the
+          said
+          Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.
+        </p>
+        <p class="center">ARTICLES in addition to, and Amendment of the Constitution of the United States of America,
+          proposed by Congress, and ratified by the Legislatures of the several States, pursuant to the fifth Article of
+          the original Constitution.</p>
+        <p class="smaller center">Frederick Augustus Muhlenberg Speaker of the House of Representatives John
+          Adams,
+          Vice-President
+          of the United States and President of the Senate.</p>
+        <p class="smaller center">Attest, <br> John Beckley, Clerk of the House of
+          Representatives. Sam. A. Otis Secretary of the Senate. </p>
+        <p class="smaller center"> *On September 25, 1789, Congress transmitted to the
+          state
+          legislatures twelve proposed amendments, two of which, having to do with Congressional representation and
+          Congressional pay, were not adopted. The remaining ten amendments became the Bill of Rights.</p>
+        <article>
+          <hr id="amendment1" />
+          <h1><strong>Amendment 1</strong> - Freedom of Religion, Speech, and the Press</h1>
+          <section>
+            <p>Congress shall make no law <us-dfn data-explanation="Concerning; pertaining to.">
+                respecting</us-dfn> an <us-dfn
+                data-explanation="A government-supported church; the act of making a particular religious sect or denomination the official church of a state or nation.">
+                establishment of religion</us-dfn> or <us-dfn data-explanation="Forbidding; preventing; hindering.">
+                prohibiting</us-dfn> the free <us-dfn
+                data-explanation="Use, practice, or application; the act or process of taking part in.">exercise
+              </us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "religion.")'>thereof</us-dfn>,
+              or
+              <us-dfn data-explanation="Reducing, diminishing, or making less.">abridging</us-dfn> the freedom of
+              <us-dfn data-explanation="The expression of ideas by spoken words.">speech</us-dfn> or of the <us-dfn
+                data-explanation="The process or business of printing and publishing.">press</us-dfn>, or the right of
+              the
+              people <us-dfn data-explanation="Without disturbance; peacefully.">peaceably</us-dfn> to assemble and to
+              <us-dfn data-explanation="To make a formal request to (usually in writing).">petition</us-dfn> the
+              government
+              for a
+              <us-dfn data-explanation="Relief or compensation for some wrong or injury.">redress</us-dfn> of <us-dfn
+                data-explanation="Conditions that cause harm or distress; formal complaints.">grievances</us-dfn>.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment2" />
+          <h1><strong>Amendment 2</strong> - The Right to Bear Arms</h1>
+          <section>
+            <p>A <us-dfn data-explanation="Put in good order.">well-regulated</us-dfn>
+              <us-dfn
+                data-explanation="A nation's able-bodied men who are not enlisted in the regular armed forces but may be called into military service in an emergency.">
+                Militia</us-dfn> being necessary to the <us-dfn data-explanation="Protection; safety.">security</us-dfn>
+              of a
+              free <us-dfn data-explanation="A nation or government.">State</us-dfn>, the right of the people to keep
+              and
+              <us-dfn data-explanation="To carry; to be equipped or furnished with.">bear</us-dfn>
+              <us-dfn data-explanation="Weapons; firearms.">Arms</us-dfn> shall not be <us-dfn
+                data-explanation="Broken; violated; trespassed.">infringed</us-dfn>.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment3" />
+          <h1><strong>Amendment 3</strong> - The Housing of Soldiers</h1>
+          <section>
+            <p>No soldier shall, in time of peace, be <us-dfn data-explanation="Provided with housing or shelter.">
+                quartered
+              </us-dfn> in any house without the <us-dfn data-explanation="Approval or agreement.">consent</us-dfn> of
+              the
+              owner,
+              nor in time of war <us-dfn data-explanation="Except; unless.">but</us-dfn> in a manner to be
+              <us-dfn data-explanation="Ordered, directed, or laid down as a rule.">prescribed</us-dfn> by law.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment4" />
+          <h1><strong>Amendment 4</strong> - Protection from Unreasonable Searches and Seizures</h1>
+          <section>
+            <p>The right of the people to be <us-dfn data-explanation="Free from danger; safe.">
+                secure</us-dfn> in their <us-dfn data-explanation="Living bodies; physical existence.">persons</us-dfn>
+              ,
+              houses, papers, and <us-dfn data-explanation="Goods; movable property (as opposed to land).">effects
+              </us-dfn>
+              against <us-dfn
+                data-explanation="Going beyond reason or moderation. (In this case, going beyond what is needed to determine whether a person accused of a crime is guilty.)">
+                unreasonable</us-dfn>
+              <us-dfn data-explanation="Instances of police officers looking for evidence of crimes.">searches</us-dfn>
+              and
+              <us-dfn
+                data-explanation="Instances of police officers arresting suspected criminals or taking evidence of criminal activity.">
+                seizures</us-dfn> shall not be <us-dfn data-explanation="Broken; infringed; trespassed.">violated
+              </us-dfn>,
+              and no <us-dfn
+                data-explanation="Orders or documents issued by a judge authorizing police officers to make arrests, search or seize property, or otherwise administer justice.">
+                warrants</us-dfn> shall <us-dfn data-explanation="To be issued, sent out, or delivered.">issue</us-dfn>
+              <us-dfn data-explanation="Except; unless.">but</us-dfn> upon <us-dfn
+                data-explanation="Sufficient reasons for believing that a criminal charge is based on good evidence.">
+                probable cause</us-dfn>, supported by <us-dfn
+                data-explanation="A solemn declaration by an individual (such as in a court of law) that involves calling upon God to witness the truth of what one says.">
+                oath</us-dfn> or <us-dfn
+                data-explanation="A solemn declaration that may be made in place of an oath and often results in legal penalties if the statement is found to be false.">
+                affirmation</us-dfn>, and <us-dfn data-explanation="Individually; distinctly; in detail.">particularly
+              </us-dfn> describing the place to be searched and the persons or things to be seized.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment5" />
+          <h1><strong>Amendment 5</strong> - Protection of Rights to Life, Liberty, and Property</h1>
+          <section>
+            <p>No person shall be <us-dfn
+                data-explanation="Required to give an explanation or accounting of; charged with.">
+                held to
+                answer for</us-dfn> a <us-dfn data-explanation="A crime that is punishable by death.">capital</us-dfn>
+              or otherwise
+              <us-dfn data-explanation="(Pronounced IN-fuh-mus.) A crime that is punishable by death or imprisonment.">
+                infamous crime</us-dfn> unless on a <us-dfn
+                data-explanation="(Pronounced in-DITE-munt.) A formal, written charge of criminal misconduct presented to a court of law by a grand jury.">
+                presentment or indictment</us-dfn> of a <us-dfn
+                data-explanation="A body of twelve to twenty-three citizens appointed to examine criminal accusations to decide whether there is enough evidence to require a public trial.">
+                grand jury</us-dfn>, except in <us-dfn
+                data-explanation="Lawsuits, accusations, or legal questions brought before a judge or court of law for decision.">
+                cases</us-dfn>
+              <us-dfn data-explanation="Originating; appearing; coming into being.">arising</us-dfn> in the land or
+              naval
+              forces, or in the <us-dfn
+                data-explanation="A nation's able-bodied men who are not enlisted in the regular armed forces but may be called into military service in an emergency.">
+                militia</us-dfn>, when in actual service in time of war or <us-dfn
+                data-explanation="Pertaining to the government or the people at large."> public</us-dfn> danger; nor
+              shall
+              any person be <us-dfn data-explanation="Liable; obligated; responsible.">subject</us-dfn> for the same
+              <us-dfn data-explanation="A crime; a violation of the law.">offense</us-dfn> to be twice put <us-dfn
+                data-explanation="In danger of losing. (That is, as a result of a court trial.)">in jeopardy of</us-dfn>
+              life or
+              <us-dfn data-explanation='An arm or leg. ("Life or limb" has come to mean life or liberty.)'>limb;
+              </us-dfn>
+
+              nor shall be <us-dfn data-explanation="Forced; required.">compelled</us-dfn> in any criminal case
+              to
+              be a <us-dfn
+                data-explanation="A person who has definite knowledge of a fact or event and may give testimony in a court of law.">
+                witness</us-dfn> against himself, nor <us-dfn
+                data-explanation="To have (something) withheld or taken away.">be
+                deprived of</us-dfn> life, liberty, or
+              property without <us-dfn
+                data-explanation="Legal procedures (such as a trial by jury) carried out according to the established law of the land.">
+                due process of law</us-dfn>; nor shall private property be taken for public use without <us-dfn
+                data-explanation="Fair payment.">just compensation</us-dfn>.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment6" />
+          <h1><strong>Amendment 6</strong> - Rights of Accused Persons in Criminal Cases</h1>
+          <section>
+            <p>In all <us-dfn
+                data-explanation="Instances of taking legal action in court against someone accused of committing a crime.">
+                criminal prosecutions</us-dfn>, the <us-dfn
+                data-explanation="A person who has been accused of breaking the law. (Often called the defendant in a court case.)">
+                accused</us-dfn> shall enjoy the right to a speedy and <us-dfn
+                data-explanation="Open to the people; not secret.">public</us-dfn> trial by an <us-dfn
+                data-explanation="Fair; not favoring one party or side more than the other.">impartial</us-dfn>
+              <us-dfn
+                data-explanation="A body of citizens appointed to examine a case brought before a court of law and to give a verdict (decision) according to the evidence presented. (See Article III.2.3.)">
+                jury</us-dfn> of the state and <us-dfn data-explanation="A particular area or region.">district</us-dfn>
+              <us-dfn data-explanation="In which; where.">wherein</us-dfn> the crime shall have been committed, which
+              district
+              shall have been <us-dfn data-explanation="Before; at an earlier time.">previously</us-dfn>
+              <us-dfn data-explanation="Defined; fixed; established.">ascertained</us-dfn> by law, and to be informed of
+              the
+              <us-dfn data-explanation="Kind, type, or class.">nature</us-dfn> and <us-dfn
+                data-explanation="A reason or motive.">
+                cause</us-dfn> of the <us-dfn data-explanation="A charge of crime or wrongdoing.">accusation</us-dfn>;
+              to be
+              <us-dfn data-explanation="Set face to face with; brought into the presence of.">confronted with</us-dfn>
+              the
+              <us-dfn
+                data-explanation="Persons who have definite knowledge of a fact or event and may give testimony in a court of law.">
+                witnesses</us-dfn> against him; to have <us-dfn
+                data-explanation="The use of government authority or officers to compel or require certain actions.">
+                compulsory process</us-dfn> for obtaining witnesses in his favor; and to have the assistance of <us-dfn
+                data-explanation="One or more lawyers qualified to give legal advice and represent a person or organization in a court case.">
+                counsel</us-dfn> for his defense.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment7" />
+          <h1><strong>Amendment 7</strong> - Rights in Civil Cases</h1>
+          <section>
+            <p>In <us-dfn
+                data-explanation="Lawsuits; formal applications to a court of law for justice; acts of suing in court for the recovery of a right or claim.">
+                suits</us-dfn>
+              <us-dfn data-explanation="Occurring in; involving.">at</us-dfn>
+              <us-dfn
+                data-explanation='The unwritten body of rules and customs developed in England over several centuries and having the effect of law in many court decisions. (As opposed to written law, also called statute law, which is enacted by a legislature. "Suits at common law" are civil cases, not criminal cases.)'>
+                common law</us-dfn>, where the value <us-dfn
+                data-explanation="In dispute; in question; contended for. (That is, in the lawsuit being argued in court.)">
+                in controversy</us-dfn> shall <us-dfn data-explanation="To surpass or go beyond; to be greater than.">
+                exceed</us-dfn> twenty dollars, the right of trial by <us-dfn
+                data-explanation="A body of citizens appointed to examine a case brought before a court of law and to give a verdict (decision) according to the evidence presented.">
+                jury</us-dfn> shall be <us-dfn
+                data-explanation="Kept safe from harm or destruction; upheld or sustained; kept free from change, decay, or corruption.">
+                preserved</us-dfn>, and no <us-dfn
+                data-explanation="(See Article III.2.2, which has been modified by this provision.)">
+                fact</us-dfn> tried by a jury
+              shall be <us-dfn data-explanation="In a different way than; by other means than.">otherwise</us-dfn>
+              <us-dfn data-explanation="Inquired into again; tried again.">reexamined</us-dfn> in any court of the
+              United
+              States than according to the rules of the common law.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment8" />
+          <h1><strong>Amendment 8</strong> - Excessive Bail, Fines, and Punishments Forbidden</h1>
+          <section>
+            <p>
+              <us-dfn data-explanation="Going beyond what is fair, proper, or normal.">Excessive</us-dfn>
+              bail shall not be required, nor excessive <us-dfn
+                data-explanation="Amounts of money charged by the government as punishment for breaking the law.">fines
+              </us-dfn>
+              <us-dfn data-explanation="Laid on or charged as a burden or penalty.">imposed</us-dfn>, nor cruel and
+              unusual
+              punishments inflicted.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment9" />
+          <h1><strong>Amendment 9</strong> - Other Rights Kept by the People</h1>
+          <section>
+            <p>The enumeration in the Constitution of certain
+              rights shall not be <us-dfn data-explanation="Understood, interpreted, or explained.">construed</us-dfn>
+              to
+              <us-dfn data-explanation="To withhold; to refuse to grant.">deny</us-dfn> or <us-dfn
+                data-explanation="To injure or dishonor; to degrade or make of less value.">disparage</us-dfn> others
+              <us-dfn data-explanation="Held; kept in possession.">retained</us-dfn> by the people.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment10" />
+          <h1><strong>Amendment 10</strong> - Undelegated Powers Kept by the States and the People</h1>
+          <section>
+            <p>The powers not <us-dfn data-explanation="Entrusted or assigned, as to an authorized representative.">
+                delegated</us-dfn> to the
+              United States by the Constitution, nor <us-dfn data-explanation="Forbidden; made unlawful; ruled out.">
+                prohibited</us-dfn> by <us-dfn data-explanation="(That is, the Constitution.)">it</us-dfn> to the
+              states,
+              are <us-dfn data-explanation="Retained; kept back; set aside.">reserved</us-dfn> to the states <us-dfn
+                data-explanation="Individually; separately.">respectively</us-dfn>, or to the people.</p>
+          </section>
+        </article>
+
+      </div>
+      <h1 class="center">
+        Amendmends 11-27
+      </h1>
+      <div class="amendments">
+        <!-- Amendment 11 -->
+        <article>
+          <hr id="amendment11" />
+          <h1><strong>Amendment 11</strong> - Authority of Federal Courts Restricted (Ratified February 7, 1795)</h1>
+          <section>
+            <p>The <us-dfn
+                data-explanation="The authority to interpret law and to administer justice by deciding cases brought before the courts. (In this case, federal courts.)">
+                judicial power</us-dfn> of the United States shall not be <us-dfn
+                data-explanation="Understood, interpreted, or explained.">construed</us-dfn> to <us-dfn
+                data-explanation="To stretch out or reach; to apply.">extend</us-dfn> to any <us-dfn
+                data-explanation="A lawsuit; a formal application to a court of law for justice; an act of suing in court for the recovery of a right or claim.">
+                suit</us-dfn>, <us-dfn data-explanation="(See definition under Article III.2.1.)">in law or equity
+              </us-dfn>,
+              <us-dfn data-explanation="Begun; initiated.">commenced</us-dfn> or <us-dfn
+                data-explanation="Pursued or carried forward in a court of law.">prosecuted</us-dfn> against one of
+              the
+              United States by <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                citizens</us-dfn> of another state, or by citizens or <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                subjects</us-dfn> of any <us-dfn data-explanation="A nation or government outside the United States.">
+                foreign state</us-dfn>.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="amendment12" />
+          <h1><strong>Amendment 12</strong> - Election of the President and Vice President (Ratified June 15, 1804)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The <us-dfn
+                data-explanation="Qualified voters appointed by the states to elect the President and Vice President of the United States. (See Article II.1.2-4.)">
+                electors</us-dfn> shall
+              meet in
+              their <us-dfn data-explanation="Individual; separate.">respective</us-dfn> states and vote by
+              <us-dfn data-explanation="A sheet of paper used to cast a secret vote.">ballot</us-dfn> for
+              President and
+              Vice President, one of whom, at least, shall not be an <us-dfn
+                data-explanation="A person who lives permanently in a certain place.">inhabitant</us-dfn> of
+              the
+              same state with <us-dfn data-explanation="(That is, the electors.)">themselves</us-dfn>; they
+              shall name
+              in their ballots the person voted for as President, and in <us-dfn
+                data-explanation="Different; separate.">
+                distinct</us-dfn> ballots the person voted for as Vice
+              President, and they shall make distinct lists of all persons voted for as President and of all
+              persons
+              voted for as Vice President, and of the number of votes for each, which lists they shall sign
+              and
+              <us-dfn data-explanation="To declare or affirm in writing to be true or genuine.">certify
+              </us-dfn>, and
+              <us-dfn data-explanation="To send.">transmit</us-dfn>
+              <us-dfn
+                data-explanation="Closed or fastened (such as with wax or some other seal); affixed with an official seal (a stamp or other device used to certify that a signature or document is authentic).">
+                sealed</us-dfn> to the <us-dfn
+                data-explanation="The place from which governmental authority is exercised (such as a capital city).">
+                seat of the government</us-dfn> of the United States, directed to the <us-dfn
+                data-explanation="(See Article I.3.4-5.)">president of the Senate</us-dfn>. The president of the
+              Senate
+              shall, in the presence of the Senate and House of Representatives, open all the <us-dfn
+                data-explanation="Certified documents. (In this case, the electoral ballots.)">certificates
+              </us-dfn>
+              , and the votes shall then be counted. The person having the greatest number of votes for
+              President
+              shall be the President, if such number be a <us-dfn
+                data-explanation="A number greater than half of the total.">
+                majority</us-dfn> of the whole
+              number
+              of electors appointed; and if no person have such majority, then from the persons having the
+              highest
+              <us-dfn data-explanation="(That is, numbers of votes.)">numbers</us-dfn>, not <us-dfn
+                data-explanation="Surpassing or going beyond; being greater than.">exceeding</us-dfn>
+              <us-dfn data-explanation="(That is, three persons among those receiving votes.)">three</us-dfn>,
+              on the
+              list of those voted for as President, the House of Representatives shall choose immediately, by
+              ballot,
+              the President. But in choosing the President, the votes shall be taken by states, the <us-dfn
+                data-explanation="The elected officials representing the voters, spoken of as a group.">
+                representation</us-dfn> from each state having one vote; a <us-dfn
+                data-explanation="The number of members of an organized body sufficient to conduct business.">
+                quorum
+              </us-dfn> for this purpose shall <us-dfn data-explanation="To be formed, made up, or composed of.">
+                consist of</us-dfn> a member or members from two-thirds of the states, and a majority of all
+              the
+              states shall be necessary to a choice. [And if the House of Representatives shall not choose a
+              President
+              whenever the right of choice shall <us-dfn
+                data-explanation=" To pass on to; to be transferred or handed down to.">devolve upon
+              </us-dfn>
+              <us-dfn data-explanation="(That is, the House of Representatives.)">them</us-dfn>, before the
+              fourth day
+              of March next following, then the Vice President shall act as President, as in the <us-dfn
+                data-explanation="Event; situation; circumstance.">case</us-dfn> of the death or other
+              <us-dfn
+                data-explanation="A lack of the ability or legal qualification to do something, as determined by the Constitution. (See Article II.1.6.)">
+                constitutional disability</us-dfn> of the President.]<us-dfn
+                data-explanation="[The words in brackets have been modified and supplemented by Amendment 20, sections 1 and 2.]">
+                <sup>amd</sup></us-dfn>
+            </p>
+
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+
+            <p>The person having the greatest number of votes as Vice President shall be the Vice President, if
+              such
+              number be a majority of the whole number of electors appointed; and if no person have a
+              majority, then
+              from the <us-dfn data-explanation="(That is, the two persons having the highest numbers of votes.)">
+                two
+                highest numbers</us-dfn> on the list, the Senate shall choose the Vice President; a quorum
+              for the
+              <us-dfn data-explanation="(That is, the purpose of choosing the Vice President.)">purpose
+              </us-dfn> shall
+              consist of two-thirds of the <us-dfn
+                data-explanation="(That is, the entire membership of the Senate rather than merely the number in attendance at the time.)">
+                whole number of Senators</us-dfn>, and a majority of the whole number shall be necessary to
+              a
+              choice. But no person <us-dfn
+                data-explanation="Legally unqualified for, as determined by the Constitution. (See Article II.1.5.)">
+                constitutionally ineligible to</us-dfn> the <us-dfn
+                data-explanation="A position of responsibility or authority in government.">office</us-dfn>
+              of
+              President shall be eligible to <us-dfn data-explanation="(That is, the office.)">that</us-dfn>
+              of Vice
+              President of the United States.</p>
+
+
+          </section>
+        </article>
+        <article>
+          <hr id="amendment13" />
+          <h1><strong>Amendment 13 </strong> - Slavery Outlawed (Ratified December 6, 1865)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>Neither <us-dfn data-explanation="The practice of owning slaves.">slavery</us-dfn> nor <us-dfn
+                data-explanation="A condition of bondage or lack of freedom, imposed against a person's will.">
+                involuntary servitude</us-dfn>, except as a punishment for crime <us-dfn data-explanation="Of which.">
+                whereof </us-dfn> the <us-dfn
+                data-explanation="A person. (In this case, the person held in servitude.)">party
+              </us-dfn>
+              shall
+              have been <us-dfn
+                data-explanation="Proven guilty by established legal procedures (such as a trial by jury).">
+                duly
+                convicted</us-dfn>, shall exist within the United States, or any place <us-dfn
+                data-explanation="Being under the control of; owing allegiance or obedience to.">subject to
+              </us-dfn>
+              their <us-dfn data-explanation="The power or authority to govern or make laws.">jurisdiction
+              </us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+
+            <p>Congress shall have power to <us-dfn data-explanation="To carry out; to put into effect.">enforce
+              </us-dfn> this <us-dfn
+                data-explanation="A distinct part of an official document. (In this case, an article of amendment.)">
+                article</us-dfn> by <us-dfn
+                data-explanation="Laws that are fit or suitable. (In this case, suitable to the purposes of the amendment.)">
+                appropriate legislation</us-dfn>.</p>
+
+
+          </section>
+        </article>
+        <article>
+          <hr id="amendment14" />
+          <h1><strong>Amendment 14 </strong> - Rights of Citizenship (Ratified July 9, 1868)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>All persons born or <us-dfn
+                data-explanation="Given the rights of a native-born citizen after immigrating from a foreign country.">
+                naturalized</us-dfn> in the United States, and <us-dfn
+                data-explanation="Being under the control of; owing allegiance or obedience to.">subject to
+              </us-dfn>
+              the <us-dfn data-explanation="The power or authority to govern or make laws.">jurisdiction
+              </us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "the United States.")'>
+                thereof
+              </us-dfn>,
+              are <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (In the United States, citizens have the privilege and duty of voting in public elections, serving on juries, and otherwise maintaining our system of free government.)">
+                citizens</us-dfn> of the United States and of the state <us-dfn data-explanation="In which; where.">
+                wherein</us-dfn> they <us-dfn data-explanation="In which; where.">reside</us-dfn>. No state
+              shall
+              make or <us-dfn data-explanation="To carry out; to put into effect.">enforce</us-dfn> any law
+              which
+              shall <us-dfn data-explanation="To reduce, diminish, or make less.">abridge</us-dfn> the <us-dfn
+                data-explanation="Rights or protections which are granted or secured by law (such as the right to buy, own, and sell property; the right to travel on public highways; or the right to be protected from higher taxes than those imposed on other citizens).">
+                privileges or immunities</us-dfn> of citizens of the United States; nor shall any state
+              <us-dfn data-explanation="To withhold or take away from.">deprive</us-dfn> any person of life,
+              liberty, or
+              property without <us-dfn
+                data-explanation="Legal procedures (such as a trial by jury) carried out according to the established law of the land.">
+                due process of law</us-dfn>, nor <us-dfn data-explanation="To withhold from; to refuse to grant to.">
+                deny to</us-dfn> any person within
+              <us-dfn data-explanation="(That is, the state's.)">its</us-dfn> jurisdiction the <us-dfn
+                data-explanation="The same legal rights and protections given to all other persons in the state.">
+                equal protection of the laws</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>
+              <us-dfn
+                data-explanation="Members of the U.S. House of Representatives, elected by the people to represent them in making laws for the United States. (Also called Congressmen or Congresswomen. See Article I.2.)">
+                Representatives</us-dfn> shall be <us-dfn data-explanation="Divided, assigned, or distributed.">
+                apportioned</us-dfn> among the several states according to <us-dfn
+                data-explanation="(That is, the populations of the individual states.)">their respective
+                numbers
+              </us-dfn>, counting the whole number of persons in each state, [<us-dfn
+                data-explanation="Not including; with the exception of.">excluding</us-dfn> Indians not
+              <us-dfn data-explanation="Charged or required to pay taxes.">taxed</us-dfn>]<us-dfn
+                data-explanation="[The words in brackets have been obsolete since the 1940s.]">
+                <sup>amd</sup>
+              </us-dfn>. But when the right to vote at any election for the choice of <us-dfn
+                data-explanation="Qualified voters appointed by the states to elect the President and Vice President of the United States. (See Article II.1.2-4; Amendment 12.)">
+                electors</us-dfn> for President and Vice President of the United States, Representatives in
+              Congress, the <us-dfn
+                data-explanation="Elected officials in the executive branch of a state government (such as the governor and lieutenant governor).">
+                executive</us-dfn> and <us-dfn data-explanation="Elected judges in the state courts.">
+                judicial
+                officers</us-dfn> of a state, or the members of the <us-dfn
+                data-explanation="An organized body of people having authority to make laws."> legislature
+              </us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "a state.")'>thereof
+              </us-dfn> is
+              denied
+              to any of the male <us-dfn data-explanation="Persons who live permanently in a certain place.">
+                inhabitants </us-dfn> of such state, being twenty-one years of age and citizens of the
+              United
+              States, or in any way abridged except for <us-dfn data-explanation="The act of taking part.">
+                participation</us-dfn> in <us-dfn
+                data-explanation="Open, armed resistance or revolt against the government.">
+                rebellion
+              </us-dfn> or
+              other crime, the <us-dfn
+                data-explanation="The population figure used to determine how many Representatives will be elected to Congress.">
+                basis of representation</us-dfn>
+              <us-dfn data-explanation='In the place previously mentioned. (That is, in "such state.")'>therein
+              </us-dfn>
+              shall be
+              <us-dfn data-explanation="Decreased; made less or smaller.">reduced</us-dfn> in the <us-dfn
+                data-explanation="Percentage; ratio; relative amount or degree.">proportion</us-dfn> which
+              the
+              number of such male citizens shall <us-dfn data-explanation="To have.">bear</us-dfn> to the
+              whole number
+              of male citizens twenty-one years of age in such state.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 3</strong></h2>
+          <section>
+
+            <p>No person shall be a <us-dfn
+                data-explanation="A member of the U.S. Senate, elected by the people of his or her state to represent them in making laws for the United States. (Until 1913, Senators were appointed by the state legislatures to represent the state governments. See Article I.3.1; Amendment 17.)">
+                Senator</us-dfn> or Representative in Congress, or elector of President and Vice President,
+              or hold
+              any <us-dfn data-explanation="A position of responsibility or authority in government.">office
+              </us-dfn>,
+              <us-dfn data-explanation="Pertaining to the general public or civic affairs.">civil</us-dfn> or
+              <us-dfn data-explanation="Pertaining to the armed forces (such as the army, navy, etc.).">
+                military</us-dfn>,
+              under the United States, or under any state, who, having <us-dfn
+                data-explanation="Before; at an earlier time.">
+                previously</us-dfn> taken an <us-dfn
+                data-explanation="A solemn declaration by an individual (such as in a court of law) that involves calling upon God to witness the truth of what one says.">
+                oath</us-dfn>, as a member of Congress, or as an officer of the United States, or as a
+              member of any
+              state legislature, or as an executive or judicial officer of any state, to <us-dfn
+                data-explanation="To sustain or uphold; to maintain; to keep from failing.">support</us-dfn>
+              the
+              Constitution of the United States, shall have <us-dfn data-explanation="To have taken part in.">
+                engaged
+                in</us-dfn>
+              <us-dfn data-explanation="An instance of a group of citizens openly rising up against their government.">
+                insurrection</us-dfn> or <us-dfn
+                data-explanation="Open, armed resistance or revolt against the government. (This refers particularly to support of the Confederacy formed by the Southern states during the American Civil War.)">
+                rebellion</us-dfn> against <us-dfn
+                data-explanation='The same thing previously mentioned. (That is, "the United States.")'>the same
+              </us-dfn>, or
+              given <us-dfn data-explanation="Assistance, support, or encouragement.">aid or comfort</us-dfn>
+              to the
+              <us-dfn data-explanation="Those who belong to a nation or armed force at war with one's own nation.">
+                enemies </us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "the United States.")'>
+                thereof
+              </us-dfn>.
+              But Congress may, by a vote of two-thirds of each <us-dfn
+                data-explanation='A chamber or division of Congress. ("Each house" means the Senate and the House of Representatives.)'>
+                house</us-dfn>, remove <us-dfn
+                data-explanation="The lack of ability or legal qualification to do the thing or things previously indicated. (In this case, to hold any of the public offices described at the beginning of this paragraph.)">
+                such disability</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 4</strong></h2>
+          <section>
+            <p>The <us-dfn data-explanation="Legal force; the capacity to be legally recognized and enforced.">
+                validity
+              </us-dfn> of the <us-dfn data-explanation="Money owed to others by a government.">public debt
+              </us-dfn>
+              of the United States, <us-dfn data-explanation="Given authority; made legal.">authorized
+              </us-dfn> by
+              law, including debts <us-dfn data-explanation="Brought on; taken on.">incurred</us-dfn> for
+              payment of
+              <us-dfn
+                data-explanation="Amounts of money paid by a government to individuals for past services, or for some disability incurred during public service.">
+                pensions</us-dfn> and <us-dfn
+                data-explanation="Extra sums of money offered or given by a government to persuade citizens to enlist in the armed forces.">
+                bounties</us-dfn> for services in <us-dfn data-explanation="Overpowering, putting down, or subduing.">
+                suppressing</us-dfn> insurrection or
+              rebellion, shall not be <us-dfn data-explanation="Legally disputed or challenged.">questioned
+              </us-dfn>.
+              But neither the United States nor any state shall <us-dfn
+                data-explanation="To take to oneself; to accept as an obligation.">assume</us-dfn> or pay
+              any debt
+              or <us-dfn
+                data-explanation="A legal bond, contract, or commitment requiring the performance of some act or the payment of money.">
+                obligation</us-dfn> incurred in aid of insurrection or rebellion against the United States,
+              or any
+              claim for the loss or <us-dfn
+                data-explanation="The act of setting (someone) free from slavery or bondage.">
+                emancipation </us-dfn>
+              of any slave; but all such debts, obligations, and claims shall be <us-dfn
+                data-explanation="Considered; regarded as.">held</us-dfn>
+              <us-dfn data-explanation="Not legal; unlawful.">illegal</us-dfn> and <us-dfn
+                data-explanation="Not legal; unlawful.">void</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 5</strong></h2>
+          <section>
+
+            <p>The Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn>, by appropriate legislation, the <us-dfn
+                data-explanation="(Conditions; requirements.)">
+                provisions </us-dfn> of this article.</p>
+
+
+          </section>
+        </article> <!-- Amendment 15 -->
+        <article>
+          <hr id="amendment15" />
+          <h1><strong>Amendment 15 </strong> - Voting Rights for All Races (Ratified February 3, 1870)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The right of <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                citizens</us-dfn> of the United States to vote shall not be <us-dfn
+                data-explanation="Withheld; refused.">denied
+              </us-dfn> or <us-dfn data-explanation="Reduced, diminished, or made less.">abridged</us-dfn> by the United
+              States
+              or by
+              any state <us-dfn data-explanation="For the sake of; by reason of; because of.">on account of
+              </us-dfn>
+              race, <us-dfn data-explanation="(That is, skin color.)">color</us-dfn>, or <us-dfn
+                data-explanation="Earlier; prior; happening before.">previous</us-dfn> condition of <us-dfn
+                data-explanation="A condition of bondage or lack of freedom.">servitude</us-dfn>.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>The Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn> this article by appropriate legislation.</p>
+
+
+          </section>
+        </article>
+        <article>
+          <hr id="amendment16" />
+          <h1><strong>Amendment 16 </strong> - Federal Income Taxes (Ratified February 3, 1913)</h1>
+          <section>
+            <p>
+              The Congress shall have
+              power to <us-dfn data-explanation="To charge or impose as a duty or burden.">lay</us-dfn> and collect
+              <us-dfn data-explanation="Sums of money charged and collected by a government for public use.">taxes
+              </us-dfn> on
+              <us-dfn data-explanation="Amounts of money earned or gained through labor, commerce, investment, etc.">
+                incomes
+              </us-dfn>, from whatever source <us-dfn data-explanation="Received; obtained.">derived</us-dfn>, without
+              <us-dfn data-explanation="The act of dividing, assigning, or distributing.">apportionment</us-dfn> among
+              the several
+              states and without regard to any <us-dfn data-explanation="A count of the population.">census</us-dfn>
+              or <us-dfn
+                data-explanation="A counting or numbering. (In this case, a census. See Articles I.2.3; I.9.4.)">
+                enumeration</us-dfn>.
+            </p>
+          </section>
+        </article>
+        <!-- Amendment 17 -->
+        <article>
+          <hr id="amendment17" />
+          <h1><strong>Amendment 17 </strong> - Election of Senators by Popular Vote (Ratified April 8, 1913)</h1>
+          <section>
+            <p>The Senate of the United States shall <us-dfn
+                data-explanation="To be formed or made up of; to consist of.">
+                be
+                composed of</us-dfn> two Senators from each state, elected by the <us-dfn
+                data-explanation="(See Article I.3.1, which has been superseded by this provision.)">people</us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "each state.")'>thereof</us-dfn>
+              ,
+              for six
+              years;
+              and each Senator shall have one vote. The <us-dfn data-explanation="Qualified voters.">electors</us-dfn>
+              in each
+              state shall have the <us-dfn
+                data-explanation="Conditions that a person must meet before being considered fit or eligible for a certain privilege.">
+                qualifications</us-dfn>
+              <us-dfn data-explanation="(Pronounced REK-wuh-zit.) Necessary or essential.">requisite</us-dfn> for
+              electors of
+              the <us-dfn data-explanation="The legislative chamber containing the largest number of members.">most
+                numerous
+                branch</us-dfn> of the <us-dfn data-explanation="The lawmaking bodies of the state governments.">
+                state
+                legislatures</us-dfn>.
+            </p>
+            <p>When <us-dfn
+                data-explanation="Instances of a public office being left vacant or unoccupied (due to death, resignation, etc.).">
+                vacancies</us-dfn> happen in the <us-dfn
+                data-explanation="The elected officials representing the voters, spoken of as a group.">
+                representation
+              </us-dfn> of any state in the Senate, the <us-dfn
+                data-explanation="The officer who executes or carries into effect the laws of a particular government. (In this case, the governor of a state.)">
+                executive authority</us-dfn> of such state shall <us-dfn
+                data-explanation="To send out, put forth, or distribute."> issue</us-dfn>
+              <us-dfn
+                data-explanation="Official documents ordering that elections be held (usually in cases of an unexpected vacancy in a public office).">
+                writs of election</us-dfn> to fill such vacancies, <us-dfn
+                data-explanation="On the condition that; if.">
+                provided </us-dfn> that the legislature of any state may <us-dfn
+                data-explanation="To authorize; to give legal power or authority to."> empower</us-dfn> the <us-dfn
+                data-explanation="(See definition of executive authority under this paragraph.)">executive</us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "any state.")'>thereof</us-dfn>
+              to
+              make
+              <us-dfn data-explanation="Lasting for a limited time.">temporary</us-dfn>
+              <us-dfn data-explanation="Official acts of naming or appointing persons to public office.">appointments
+              </us-dfn>
+              until the people fill the vacancies by election as the legislature may direct.
+            </p>
+            <p>This amendment shall not be so <us-dfn data-explanation="Understood, interpreted, or explained.">
+                construed
+              </us-dfn> as to affect the election or <us-dfn
+                data-explanation="A designated period of time for which a person is elected or appointed to serve in a public office.">
+                term</us-dfn> of any Senator chosen before <us-dfn data-explanation="(That is, this amendment.)">it
+              </us-dfn>
+              becomes <us-dfn data-explanation="Legally recognized and enforceable.">valid</us-dfn> as part of the
+              Constitution.</p> <!-- Amendment 18 -->
+          </section>
+        </article>
+        <article>
+          <hr id="amendment18" />
+          <h1><strong>Amendment 18 </strong> - Liquor Outlawed (Ratified January 16, 1919)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>[After one year from the <us-dfn data-explanation="Official approval or confirmation by vote.">
+                ratification</us-dfn> of this <us-dfn
+                data-explanation="A distinct part of an official document. (In this case, an article of amendment.)">
+                article</us-dfn>, the <us-dfn data-explanation="The act or process of making or producing (something).">
+                manufacture </us-dfn>,
+              sale, or <us-dfn
+                data-explanation="The act of carrying or conveying (something) from one place to another.">
+                transportation</us-dfn> of <us-dfn
+                data-explanation="Alcoholic drinks (such as beer, wine, whiskey, etc.).">
+                intoxicating
+                liquors
+              </us-dfn> within, the <us-dfn
+                data-explanation="The act of importing or bringing in (something) from a foreign country.">
+                importation</us-dfn>
+              <us-dfn data-explanation='Of the thing previously mentioned. (That is, of "intoxicating liquors.")'>
+                thereof
+              </us-dfn> into, or the <us-dfn
+                data-explanation="The act of exporting or sending (something) to a foreign country.">
+                exportation
+              </us-dfn> thereof from the United States and all <us-dfn
+                data-explanation="Any geographical area owned or controlled by a state or nation, often located far from the seat of government. (In this case, a part of the United States that is not included within any state.)">
+                territory</us-dfn>
+              <us-dfn data-explanation="Under the authority or control of.">subject</us-dfn> to the <us-dfn
+                data-explanation="The power or authority to govern or make laws.">jurisdiction</us-dfn>
+              <us-dfn data-explanation='(That is, of "the United States.")'>thereof</us-dfn>
+              <us-dfn data-explanation="To be used for drinking.">for beverage purposes</us-dfn> is <us-dfn
+                data-explanation="By this document. (That is, by this amendment.)">hereby</us-dfn>
+              <us-dfn data-explanation="Forbidden; made unlawful; ruled out.">prohibited</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+
+            <p>The Congress and the several states shall have <us-dfn
+                data-explanation="Exercised at the same time by two different authorities.">concurrent power
+              </us-dfn> to <us-dfn data-explanation="To carry out; to put into effect.">enforce</us-dfn> this
+              article
+              by <us-dfn
+                data-explanation="Laws that are fit or suitable. (In this case, suitable to the purposes of the amendment.)">
+                appropriate legislation</us-dfn>.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 3</strong></h2>
+          <section>
+            <p>This article shall be <us-dfn data-explanation="Not functional; having no legal force or effect.">
+                inoperative</us-dfn> unless it shall have been <us-dfn
+                data-explanation="Officially approved or confirmed by vote.">ratified </us-dfn> as an
+              amendment to
+              the Constitution by the <us-dfn
+                data-explanation="Organized bodies of people having authority to make laws.">
+                legislatures
+              </us-dfn>
+              of the several states, as <us-dfn data-explanation="Agreed upon; arranged for; established or required.">
+                provided </us-dfn> in the
+              Constitution, within seven years from the date of the <us-dfn
+                data-explanation="The act of submitting, presenting, or delivering.">submission</us-dfn>
+              <us-dfn data-explanation="Of this document. (That is, of this amendment.)">hereof</us-dfn> to
+              the states
+              by the Congress.]<us-dfn data-explanation="[This amendment was repealed by Amendment 21.]">
+                <sup>amd</sup> </us-dfn>
+            </p>
+
+
+          </section>
+        </article> <!-- Amendment 19 -->
+        <article>
+          <hr id="amendment19" />
+          <h1><strong>Amendment 19 </strong> - Voting Rights for Men and Women (Ratified August 18, 1920)</h1>
+          <section>
+            <p>The right of <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                citizens</us-dfn> of the United States to vote shall not be <us-dfn
+                data-explanation="Withheld; refused.">
+                denied</us-dfn> or <us-dfn data-explanation="Reduced, diminished, or made less.">abridged</us-dfn>
+              by the
+              United States or by any state <us-dfn data-explanation="For the sake of; by reason of; because of.">on
+                account
+                of</us-dfn>
+              <us-dfn data-explanation="Distinction between, or identification as, male or female.">sex</us-dfn>.
+            </p>
+            <p>Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn> this article by appropriate legislation.</p> <!-- Amendment 20 -->
+          </section>
+        </article>
+        <article>
+          <hr id="amendment20" />
+          <h1><strong>Amendment 20 </strong> - Terms of the President and Congress; Replacing the President (Ratified
+            January
+            23, 1933)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The <us-dfn
+                data-explanation="Designated periods of time for which persons are elected or appointed to serve in public office.">
+                terms</us-dfn> of the President and Vice President shall end at noon on the twentieth day of
+              January, and the terms of <us-dfn
+                data-explanation="Members of the U.S. Senate, elected by the people to represent them in making laws for the United States. (Until 1913, Senators were appointed by the state legislatures to represent the state governments. See Article I.3.1; Amendment 17.)">
+                Senators</us-dfn> and <us-dfn
+                data-explanation="Members of the U.S. House of Representatives, elected by the people to represent them in making laws for the United States. (Also called Congressmen or Congresswomen. See Article I.2.)">
+                Representatives</us-dfn> at noon on the third day of January, of the years in which such
+              terms would
+              have ended if this <us-dfn
+                data-explanation="A distinct part of an official document. (In this case, an article of amendment.)">
+                article</us-dfn> had not been <us-dfn data-explanation="Officially approved or confirmed by vote.">
+                ratified</us-dfn>; and the terms of their <us-dfn
+                data-explanation="Persons who succeed or replace (others) in office.">successors</us-dfn>
+              shall then
+              begin.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+
+            <p>The Congress shall <us-dfn data-explanation="(That is, the Congress.)">assemble</us-dfn> at least
+              once in
+              every year, and such meeting shall begin at noon on the third day of January, unless they shall
+              by law
+              appoint a different day.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 3</strong></h2>
+          <section>
+
+            <p>If, at the time fixed for the beginning of the term of the President, the <us-dfn
+                data-explanation="The person elected as President but not yet sworn in.">President-elect
+              </us-dfn>
+              shall have died, the <us-dfn
+                data-explanation="The person elected as Vice President but not yet sworn in.">
+                Vice President-elect
+              </us-dfn> shall become President. If a President shall not have been chosen before the time
+              fixed for
+              the beginning of his term, or if the President-elect shall have failed to <us-dfn
+                data-explanation="To meet the required conditions. (In this case, the conditions required by the Constitution for service as President. See Article II.1.5.)">
+                qualify</us-dfn>, then the Vice President-elect shall act as President until a President
+              shall have
+              qualified; and the Congress may by law <us-dfn
+                data-explanation="To make plans or arrangements for in advance.">
+                provide for </us-dfn> the
+              <us-dfn data-explanation="Event; situation; circumstance.">case</us-dfn>
+              <us-dfn data-explanation="In which.">wherein</us-dfn> neither a President-elect nor a Vice
+              President-elect shall have qualified, <us-dfn
+                data-explanation="Formally or publicly stating or announcing. (In this case, by enacting a law or laws.)">
+                declaring</us-dfn> who shall then act as President, or the <us-dfn
+                data-explanation="Form; method; way.">manner
+              </us-dfn> in which one who is to act shall be
+              selected,
+              and such person shall act <us-dfn
+                data-explanation='In accordance with what has been stated. (That is, "as President.")'>
+                accordingly
+                until a
+                President or Vice President shall have qualified</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 4</strong></h2>
+          <section>
+
+            <p>The Congress may by law provide for the case of the death of any of the persons from whom the
+              House of
+              Representatives may choose a President whenever the right of choice shall have <us-dfn
+                data-explanation="To have passed on to; to have been transferred or handed down to.">
+                devolved
+              </us-dfn> upon <us-dfn
+                data-explanation="(That is, the House of Representatives. See Amendment 12, paragraph 1.)">
+                them
+              </us-dfn>, and for the case of the death of any of the persons from whom the Senate may choose a
+              Vice
+              President whenever the right of choice shall have devolved upon <us-dfn
+                data-explanation="(That is, the Senate. See Amendment 12, paragraph 2.)">them</us-dfn>.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 5</strong></h2>
+          <section>
+
+            <p>Sections 1 and 2 shall take effect on the fifteenth day of October following the ratification of
+              this
+              article.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 6</strong></h2>
+          <section>
+            <p>This article shall be <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 18, section 3.)">
+                inoperative</us-dfn> unless it shall have been ratified as an amendment to the Constitution
+              by the
+              legislatures of three- fourths of the several states within seven years from the date of its
+              submission.
+            </p>
+
+
+          </section>
+        </article> <!-- Amendment 21 -->
+        <article>
+          <hr id="amendment21" />
+          <h1><strong>Amendment 21 </strong> - Control of Liquor Returned to the States (Ratified December 5, 1933)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The eighteenth article of amendment to the Constitution of the United States is <us-dfn
+                data-explanation="By this document. (That is, by this amendment.)">hereby</us-dfn>
+              <us-dfn data-explanation="Taken back, cancelled, or revoked; made void (without legal force or effect).">
+                repealed</us-dfn>.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>The <us-dfn data-explanation="The act of carrying or conveying (something) from one place to another.">
+                transportation</us-dfn> or <us-dfn
+                data-explanation="The act of importing or bringing in (something) from another state or country.">
+                importation</us-dfn> into any state, <us-dfn
+                data-explanation="Any geographical area owned or controlled by a state or nation, often located far from the seat of government. (In this case, a part of the United States that is not included within any state.)">
+                territory</us-dfn>, or <us-dfn
+                data-explanation="A territory that is outside the geographical boundaries of (and often overseas from) the country that owns or controls it.">
+                possession</us-dfn> of the United States for delivery or use <us-dfn
+                data-explanation='In the thing or things previously mentioned. (That is, in "any state, territory, or possession of the United States.")'>
+                therein</us-dfn> of <us-dfn data-explanation="Alcoholic drinks (such as beer, wine, whiskey, etc.).">
+                intoxicating liquors
+              </us-dfn>, in violation of the laws <us-dfn
+                data-explanation='Of the thing or things previously mentioned. (That is, of "any state, territory, or possession of the United States.")'>
+                thereof</us-dfn>, is hereby <us-dfn data-explanation="Forbidden; made unlawful; ruled out.">
+                prohibited</us-dfn>.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 3</strong></h2>
+          <section>
+            <p>This <us-dfn
+                data-explanation="A distinct part of an official document. (In this case, an article of amendment.)">
+                article</us-dfn> shall be <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 18, section 3.)">
+                inoperative</us-dfn> unless it shall have been ratified as an amendment to the Constitution
+              by
+              <us-dfn
+                data-explanation="Formal meetings or assemblies of citizens, specially organized to consider important political matters. (Thus far, this is the only amendment to have been ratified by specially elected state conventions rather than by the state legislatures. See Article V.)">
+                conventions in the several states, as provided in the Constitution, within seven years from
+                the date
+                of the submission hereof to the states by the Congress</us-dfn>.</p>
+
+
+          </section>
+        </article> <!-- Amendment 22 -->
+        <article>
+          <hr id="amendment22" />
+          <h1><strong>Amendment 22 </strong> - Presidents Limited to Two Terms (Ratified February 27, 1951)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>No person shall be elected to the <us-dfn
+                data-explanation="A position of responsibility or authority in government.">office</us-dfn>
+              of the
+              President more than twice, and no person who has held the office of President, or acted as
+              President,
+              for more than two years of a <us-dfn
+                data-explanation="A designated period of time for which a person is elected or appointed to serve in a public office.">
+                term</us-dfn> to which some other person was elected President shall be elected to the
+              office of the
+              President more than once. But this <us-dfn
+                data-explanation="A distinct part of an official document. (In this case, an article of amendment.)">
+                article</us-dfn> shall not apply to any person holding the office of President when this
+              article was
+              <us-dfn data-explanation="Recommended or suggested.">proposed</us-dfn> by the Congress, and
+              shall not
+              <us-dfn data-explanation="To hinder or stop; to keep from happening.">prevent</us-dfn> any
+              person who
+              may be holding the office of President, or acting as President, during the term within which
+              this
+              article becomes <us-dfn data-explanation="Functional; having legal force or effect.">operative
+              </us-dfn>
+              from holding the office of President or acting as President during the remainder of such term.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>This article shall be <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 18, section 3.)">
+                inoperative</us-dfn> unless it shall have been ratified as an amendment to the Constitution
+              by the
+              legislatures of three- fourths of the several states within seven years from the date of its
+              submission
+              to the states by the Congress.</p>
+
+
+          </section>
+        </article> <!-- Amendment 23 -->
+        <article>
+          <hr id="amendment23" />
+          <h1><strong>Amendment 23 </strong> - Presidential Electors for the District of Columbia (Ratified March 29,
+            1961)
+          </h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The <us-dfn data-explanation="A particular area or region. (In this case, the District of Columbia.)">
+                district</us-dfn>
+              <us-dfn data-explanation="Forming, composing, or making up.">constituting</us-dfn> the <us-dfn
+                data-explanation="The place from which governmental authority is exercised (such as a capital city).">
+                seat of government</us-dfn> of the United States shall appoint, in such <us-dfn
+                data-explanation="Form; method; way.">manner</us-dfn> as the Congress may direct, a number
+              of
+              <us-dfn
+                data-explanation="Qualified voters appointed by the states to elect the President and Vice President of the United States. (See Article II.1.2-4; Amendment 12.)">
+                electors</us-dfn> of President and Vice President equal to the whole number of <us-dfn
+                data-explanation="Members of the U.S. Senate, elected by the people to represent them in making laws for the United States. (Until 1913, Senators were appointed by the state legislatures to represent the state governments. See Article I.3.1; Amendment 17.)">
+                Senators</us-dfn> and <us-dfn
+                data-explanation="Members of the U.S. House of Representatives, elected by the people to represent them in making laws for the United States. (Also called Congressmen or Congresswomen. See Article I.2.)">
+                Representatives</us-dfn> in Congress to which the district would be entitled if it were a
+              state, but
+              in no <us-dfn data-explanation="Case; situation; circumstance.">event</us-dfn> more than the
+              <us-dfn data-explanation="Having the smallest population.">least populous</us-dfn> state;
+              <us-dfn data-explanation="(That is, the electors.)">they</us-dfn> shall be in addition to those
+              appointed by
+              the states, but they shall be <us-dfn data-explanation="Viewed, regarded, or classified as.">
+                considered
+              </us-dfn>, for the purposes of the election of President and Vice President, to be electors
+              appointed by
+              a state; and they shall meet in the district and perform such duties as <us-dfn
+                data-explanation="Agreed upon; arranged for; established or required. (See Amendment 12.)">
+                provided
+              </us-dfn> by the twelfth article of amendment.
+            </p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>The Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn> this article by appropriate legislation.</p>
+
+
+          </section>
+        </article> <!-- Amendment 24 -->
+        <article>
+          <hr id="amendment24" />
+          <h1><strong>Amendment 24 </strong> - Voting Rights Protected from Taxes (Ratified January 23, 1964)</h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The right of <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                citizens</us-dfn> of the United States to vote in any <us-dfn
+                data-explanation='An election in which the voters nominate or select, from a group of candidates for public office, those whose names will later appear on the ballot in the final election. (Primary means first; thus a primary election is a "first election.")'>
+                primary</us-dfn> or other election for President or Vice President, for <us-dfn
+                data-explanation="Qualified voters appointed by the states to elect the President and Vice President of the United States. (See Article II.1.2-4; Amendment 12.)">
+                electors</us-dfn> for President or Vice President, or for <us-dfn
+                data-explanation="A member of the U.S. Senate, elected by the people of his or her state to represent them in making laws for the United States. (Until 1913, Senators were appointed by the state legislatures to represent the state governments. See Article I.3.1; Amendment 17.)">
+                Senator</us-dfn> or <us-dfn
+                data-explanation="A member of the U.S. House of Representatives, elected by the people of his or her state to represent them in making laws for the United States. (Also called a Congressman or Congresswoman. See Article I.2.)">
+                Representative</us-dfn> in Congress, shall not be <us-dfn data-explanation="Withheld; refused.">
+                denied</us-dfn> or <us-dfn data-explanation="Reduced, diminished, or made less.">abridged
+              </us-dfn>
+              by the United States or any state <us-dfn data-explanation="For the sake of; on account of; because of.">
+                by
+                reason of</us-dfn> failure to pay
+              any <us-dfn
+                data-explanation="A tax on each person, requiring the same amount from everyone regardless of ability to pay. (Poll means head. The poll tax is also called a capitation. See Article I.9.4.)">
+                poll tax</us-dfn> or other tax.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+            <p>The Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn> this article by appropriate legislation.</p>
+
+
+          </section>
+        </article> <!-- Amendment 25 -->
+        <article>
+          <hr id="amendment25" />
+          <h1><strong>Amendment 25 </strong> - Replacing the President and Vice President (Ratified February 10, 1967)
+          </h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>In case of the <us-dfn data-explanation="(The act of removing, dismissing, or taking away (someone).">
+                removal</us-dfn> of the President from <us-dfn
+                data-explanation="A position of responsibility or authority in government.">office</us-dfn>
+              or of
+              his death or <us-dfn data-explanation="The act of quitting or voluntarily giving up a position.">
+                resignation</us-dfn> , the Vice President shall become President.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>Whenever there is a <us-dfn
+                data-explanation="An instance of a public office being left vacant or unoccupied (due to death, resignation, etc.).">
+                vacancy</us-dfn> in the office of the Vice President, the President shall <us-dfn
+                data-explanation="To name, designate, or propose (someone) for appointment or election to some public office.">
+                nominate</us-dfn> a Vice President, who shall take office upon <us-dfn
+                data-explanation="Official approval or ratification.">confirmation</us-dfn> by a <us-dfn
+                data-explanation="A number greater than half of the total.">majority</us-dfn> vote of both
+              <us-dfn
+                data-explanation='Legislative chambers or divisions. ("Both houses" is a reference to the Senate and the House of Representatives.)'>
+                houses</us-dfn> of Congress.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 3</strong></h2>
+          <section>
+            <p>Whenever the President <us-dfn data-explanation="Sends.">transmits</us-dfn> to the <us-dfn
+                data-explanation="Temporary president. (In the absence of the Vice President. See Article I.3.4-5.)">
+                president pro tempore</us-dfn> of the Senate and the <us-dfn
+                data-explanation="The presiding officer. (See Article I.2.5.)">speaker</us-dfn> of the House of
+              Representatives his written <us-dfn data-explanation="A formal statement.">declaration</us-dfn>
+              that he
+              is unable to <us-dfn data-explanation="To perform or carry out.">discharge</us-dfn> the powers
+              and
+              duties of his office, and until he transmits to them a written declaration <us-dfn
+                data-explanation='Stating the opposite of what was previously stated. (In this case, stating that he is able "to discharge the powers and duties of his office.")'>
+                to the contrary</us-dfn>, such powers and duties shall be discharged by the Vice President
+              as acting
+              President.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 4</strong></h2>
+          <section>
+
+            <p>Whenever the Vice President and a majority of either the <us-dfn
+                data-explanation="Chief; most important; highest in rank.">principal</us-dfn> officers of
+              the
+              <us-dfn
+                data-explanation="Departments of the executive branch of the federal government. (See Article II.2.1.)">
+                executive departments</us-dfn>, or of such other <us-dfn
+                data-explanation="A group of persons organized for some purpose.">body</us-dfn> as Congress
+              may by
+              law <us-dfn data-explanation="To make arrangements for; to agree upon; to establish or require.">
+                provide
+              </us-dfn>, transmit to the president pro tempore of the Senate and the speaker of the House of
+              Representatives their written declaration that the President is unable to discharge the powers
+              and
+              duties of his office, the Vice President shall immediately <us-dfn
+                data-explanation="To take to oneself; to accept as an obligation."> assume</us-dfn> the
+              powers and
+              duties of the office as acting President. <us-dfn data-explanation="After that."> Thereafter
+              </us-dfn>,
+              when the President transmits to the president pro tempore of the Senate and the speaker of the
+              House of
+              Representatives his written declaration that no <us-dfn data-explanation="Lack of ability.">
+                inability
+              </us-dfn> exists, he shall <us-dfn
+                data-explanation="To assume or take again; to begin again; to return to.">
+                resume </us-dfn>
+              the
+              powers and duties of his office unless the Vice President and a majority of either the principal
+              officers of the executive department, or of such other body as Congress may by law provide,
+              transmit
+              within four days to the president pro tempore of the Senate and the speaker of the House of
+              Representatives their written declaration that the President is unable to discharge the powers
+              and
+              duties of his office. <us-dfn data-explanation="Immediately after that.">Thereupon</us-dfn>
+              Congress
+              shall decide the <us-dfn data-explanation="An outcome or result; a matter being disputed.">issue
+              </us-dfn>, <us-dfn data-explanation="A Meeting or coming together; convening.">assembling
+              </us-dfn>
+              within forty-eight hours for that purpose if not <us-dfn
+                data-explanation="Assembled in a formal meeting (already) to conduct official business.">in
+                session
+              </us-dfn>. If the Congress, within twenty-one days after <us-dfn data-explanation="The act of receiving.">
+                receipt</us-dfn> of the <us-dfn
+                data-explanation='More recent; later. (The "latter . . . declaration" refers to the one from the Vice President and other officers, stating that the President is unable to carry out his duties.)'>
+                latter</us-dfn> written declaration, or, if Congress is not in session, within
+              twenty-one
+              days after Congress is required to assemble, <us-dfn data-explanation="Decides or settles.">
+                determines
+              </us-dfn> by two-thirds vote of both houses that the President is unable to discharge the powers
+              and
+              duties of his office, the Vice President shall continue to discharge <us-dfn
+                data-explanation='The same thing previously mentioned. (That is, the "powers and duties" of the presidency.)'>
+                the same</us-dfn> as acting President; <us-dfn data-explanation="If not.">otherwise</us-dfn>
+              , the
+              President shall resume the powers and duties of his office.</p>
+
+
+          </section>
+        </article> <!-- Amendment 26 -->
+        <article>
+          <hr id="amendment26" />
+          <h1><strong>Amendment 26 </strong> - Voting Rights for All Citizens Eighteen or Older (Ratified July 1, 1971)
+          </h1>
+          <hr class="section-marker" />
+          <h2><strong>Section 1</strong></h2>
+          <section>
+
+
+            <p>The right of <us-dfn
+                data-explanation="Persons who owe allegiance to a government and are entitled to its protection. (See Amendment 14, section 1.)">
+                citizens</us-dfn> of the United States, who are eighteen years of age or older, to vote
+              shall not be
+              <us-dfn data-explanation="Withheld; refused.">denied</us-dfn> or <us-dfn
+                data-explanation="Reduced, diminished, or made less.">abridged</us-dfn> by the United States
+              or by
+              any state <us-dfn data-explanation="For the sake of; by reason of; because of.">on account of
+              </us-dfn>
+              age.</p>
+          </section>
+          <hr class="section-marker" />
+          <h2><strong>Section 2</strong></h2>
+          <section>
+            <p>The Congress shall have power to <us-dfn
+                data-explanation="(See definitions of this and other terms in this paragraph under Amendment 13, section 2.)">
+                enforce</us-dfn> this article by appropriate legislation.</p>
+
+
+          </section>
+        </article> <!-- Amendment 27 -->
+        <article>
+          <hr id="amendment27" />
+          <h1><strong>Amendment 27 </strong> - Changes in Salaries of Senators and Representatives (Ratified May 7,
+            1992)
+          </h1>
+          <section>
+            <p>
+              No law <us-dfn data-explanation="Changing or making different; increasing or decreasing.">varying
+              </us-dfn> the
+              <us-dfn data-explanation="Payment. (See Article I.6.1.)">compensation</us-dfn> for the services of the
+              Senators
+              and
+              Representatives shall <us-dfn data-explanation="To be carried out or enforced; to become valid.">take
+                effect
+              </us-dfn> until an election of <us-dfn
+                data-explanation="Members of the U.S. House of Representatives, elected by the people to represent them in making laws for the United States. (Also called Congressmen or Congresswomen. See Article I.2.)">
+                Representatives</us-dfn> shall have <us-dfn
+                data-explanation="Come between or occurred between. (That is, between the time the law is enacted and the time it takes effect. Representatives are elected every two years. See Article I.2.1.)">
+                intervened</us-dfn>.
+            </p>
+          </section>
+        </article>
+      </div>
+      <div class="center">
+        <img class="seal_heading" src="/constitution/imgs/first-flag.svg" alt="The first flag of the U.S." />
+      </div>
+      <h1 id="articlesOfConfederation" class="center usc">The Articles of Confederation</h1>
+      <div class="amendments">
+        <article>
+          <hr id="oldPreamble">
+          <h1><strong>Preamble</strong></h1>
+          <section>
+            <p>To all to whom these Presents shall come, we the undersigned Delegates of the States affixed to our
+              Names,
+              send
+              greeting.</p>
+            <p> Whereas the Delegates of the United States of America, in Congress assembled, did, on the 15th day of
+              November, in the Year of Our Lord One thousand Seven Hundred and Seventy seven, and in the Second Year of
+              the
+              Independence of America, agree to certain articles of Confederation and perpetual Union between the States
+              of
+              New-hampshire, Massachusetts-bay, Rhodeisland and Providence Plantations, Connecticut, New York, New
+              Jersey,
+              Pennsylvania, Delaware, Maryland, Virginia, North-Carolina, South-Carolina, and Georgia in the words
+              following,
+              viz. "Articles of Confederation and perpetual Union between the states of New-hampshire,
+              Massachusetts-bay,
+              Rhodeisland and Providence Plantations, Connecticut, New-York, New-Jersey, Pennsylvania, Delaware,
+              Maryland,
+              Virginia, North-Carolina, South-Carolina and Georgia".</p>
+          </section>`
+
+        </article>
+        <article>
+          <hr id="oldArticleI">
+          <h1><strong>Article I</strong></h1>
+          <section>
+            <p>The Stile of this confederacy shall be "The United States of America."
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleII">
+          <h1><strong>Article II</strong></h1>
+          <section>
+            <p>Each state retains its sovereignty, freedom, and independence, and every Power,
+              Jurisdiction and right, which is not by this confederation expressly delegated to the United States, in
+              Congress
+              assembled.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleIII">
+          <h1><strong>Article III</strong></h1>
+          <section>
+            <p> The said states hereby severally enter into a firm league of friendship with each
+              other, for their common defence, the security of their Liberties, and their mutual and general welfare,
+              binding
+              themselves to assist each other, against all force offered to, or attacks made upon them, or any of them,
+              on
+              account
+              of
+              religion, sovereignty, trade, or any other pretence whatever.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleIV">
+          <h1><strong>Article IV</strong></h1>
+          <section>
+            <p>The better to secure and perpetuate mutual friendship and intercourse among the
+              people
+              of the different states in this union, the free inhabitants of each of these states, paupers, vagabonds
+              and
+              fugitives
+              from justice excepted, shall be entitled to all privileges and immunities of free citizens in the several
+              states;
+              and
+              the people of each state shall have free ingress and regress to and from any other state, and shall enjoy
+              therein
+              all
+              the privileges of trade and commerce, subject to the same duties impositions and restrictions as the
+              inhabitants
+              thereof
+              respectively, provided that such restriction shall not extend so far as to prevent the removal of property
+              imported
+              into
+              any state, to any other state, of which the Owner is an inhabitant; provided also that no imposition,
+              duties
+              or
+              restriction shall be laid by any state, on the property of the united states, or either of them. If any
+              Person
+              guilty
+              of, or charged with treason, felony, &mdash; or other high misdemeanor in any state, shall flee from
+              Justice, and be
+              found in any of the united states, he shall, upon demand of the Governor or executive power, of the state
+              from which
+              he
+              fled, be delivered up and removed to the state having jurisdiction of his offence. Full faith and credit
+              shall be
+              given
+              in each of these states to the records, acts and judicial proceedings of the courts and magistrates of
+              every
+              other
+              state.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleV">
+          <h1><strong>Article V</strong></h1>
+          <section>
+            <p>For the more convenient management of the general interests of the united states,
+              delegates shall be annually appointed in such manner as the legislature of each state shall direct, to
+              meet
+              in
+              Congress
+              on the first Monday in November, in every year, with a power reserved to each state, to recal its
+              delegates,
+              or any
+              of
+              them, at any time within the year, and to send others in their stead, for the remainder of the Year.</p>
+            <p> No state shall
+              be represented in Congress by less than two, nor by more than seven Members; and no person shall be
+              capable
+              of being
+              a delegate for more than three years in any term of six years; nor shall any person, being a delegate, be
+              capable of
+              holding any office under the united states, for which he, or another for his benefit receives any salary,
+              fees or
+              emolument of any kind.</p>
+            <p> Each state shall maintain its own delegates in a meeting of the states, and while they act
+              as members of the committee of the states. In determining questions in the united states in Congress
+              assembled,
+              each state shall have one vote.</p>
+            <p> Freedom of speech and debate in Congress shall not be impeached or questioned
+              in any Court, or place out of Congress, and the members of congress shall be protected in their persons
+              from
+              arrests and imprisonments, during the time of their going to and from, and attendance on congress, except
+              for treason, felony, or breach of the peace.</p>
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleVI">
+          <h1><strong>Article VI</strong></h1>
+          <section>
+            <p>No state, without the Consent of the united states in congress assembled,
+              shall send any embassy to, or receive any embassy from, or enter into any conference agreement, alliance
+              or
+              treaty with any King prince or state; nor shall any person holding any office of profit or trust under the
+              united states, or any of them, accept of any present, emolument, office or title of any kind whatever from
+              any
+              king, prince or foreign state; nor shall the united states in congress assembled, or any of them, grant
+              any
+              title of nobility.</p>
+            <p> No two or more states shall enter into any treaty, confederation or alliance whatever
+              between them, without the consent of the united states in congress assembled, specifying accurately the
+              purposes for which the same is to be entered into, and how long it shall continue.</p>
+            <p> No state shall lay any
+              imposts or duties, which may interfere with any stipulations in treaties, entered into by the united
+              states in congress assembled, with any king, prince or state, in pursuance of any treaties already
+              proposed by congress, to the courts of France and Spain.</p>
+            <p> No vessels of war shall be kept up in time
+              of peace by any state, except such number only, as shall be deemed necessary by the united states in
+              congress assembled, for the defence of such state, or its trade; nor shall any body of forces be
+              kept up by any state, in time of peace, except such number only, as in the judgment of the united
+              states, in congress assembled, shall be deemed requisite to garrison the forts necessary for the
+              defence of such state; but every state shall always keep up a well regulated and disciplined
+              militia, sufficiently armed and accoutered, and shall provide and constantly have ready for use, in
+              public stores, a due number of field pieces and tents, and a proper quantity of arms, ammunition and
+              camp equipage. No state shall engage in any war without the consent of the united states in congress
+              assembled, unless such state be actually invaded by enemies, or shall have received certain advice
+              of a resolution being formed by some nation of Indians to invade such state, and the danger is so
+              imminent as not to admit of a delay till the united states in congress assembled can be consulted:
+              nor shall any state grant commissions to any ships or vessels of war, nor letters of marque or
+              reprisal, except it be after a declaration of war by the united states in congress assembled, and
+              then only against the kingdom or state and the subjects thereof, against which war has been so
+              declared, and under such regulations as shall be established by the united states in congress
+              assembled, unless such state be infested by pirates, in which case vessels of war may be fitted out
+              for that occasion, and kept so long as the danger shall continue, or until the united states in
+              congress assembled, shall determine otherwise.</p>
+          </section>
+        </article>
+
+
+
+        <article>
+          <hr id="oldArticleVII">
+          <h1><strong>Article VII</strong></h1>
+          <section>
+            <p>When land-forces are raised by any state for the common defence,
+              all
+              officers of or under the rank of colonel, shall be appointed by the legislature of each state
+              respectively, by whom such forces shall be raised, or in such manner as such state shall direct, and all
+              vacancies shall be filled up by the State which first made the appointment.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleVIII">
+          <h1><strong>Article VIII</strong></h1>
+          <section>
+            <p>All charges of war, and all other expences that shall be incurred for
+              the common defence or general welfare, and allowed by the united states in congress assembled, shall be
+              def
+              rayed out of a common treasury, which shall be supplied by the several states in proportion to the value
+              of
+              all land within each state, granted to or surveyed for any Person, as such land and the buildings and
+              improvements thereon shall be estimated according to such mode as the united states in congress assembled,
+              shall from time to time direct and appoint.</p>
+            <p> The taxes for paying that proportion shall be laid and levied
+              by the authority and direction of the legislatures of the several states within the time agreed upon by
+              the united states in congress assembled.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleIX">
+          <h1><strong>Article IX</strong></h1>
+          <section>
+            <p>The united states in congress assembled, shall have the sole and
+              exclusive
+              right and power of determining on peace and war, except in the cases mentioned in the sixth article
+              &mdash;
+              of sending and receiving ambassadors &mdash; entering into treaties and alliances, provided that no treaty
+              of commerce shall be made whereby the legislative power of the respective states shall be restrained from
+              imposing such imposts and duties on foreigners as their own people are subjected to, or from prohibiting
+              the
+              exportation or importation of any species of goods or commodities, whatsoever &mdash; of establishing
+              rules
+              for deciding in all cases, what captures on land or water shall be legal, and in what manner prizes taken
+              by
+              land or naval forces in the service of the united states shall be divided or appropriated &mdash; of
+              granting letters of marque and reprisal in times of peace &mdash; appointing courts for the trial of
+              piracies and felonies committed on the high seas and establishing courts for receiving and determining
+              finally appeals in all cases of captures, provided that no member of congress shall be appointed a judge
+              of
+              any of the said courts.
+            </p>
+            <p>The united states in congress assembled shall also be the last resort on appeal in all disputes and
+              differences now subsisting or that hereafter may arise between two or more states concerning boundary,
+              jurisdiction or any other cause whatever; which authority shall always be exercised in the manner
+              following.
+              Whenever the legislative or executive authority or lawful agent of any state in controversy with another
+              shall present a petition to congress stating the matter in question and praying for a hearing, notice
+              thereof shall be given by order of congress to the legislative or executive authority of the other state
+              in
+              controversy, and a day assigned for the appearance of the parties by their lawful agents, who shall then
+              be
+              directed to appoint by joint consent, commissioners or judges to constitute a court for hearing and
+              determining the matter in question: but if they cannot agree, congress shall name three persons out of
+              each
+              of the united states, and from the list of such persons each party shall alternately strike out one, the
+              petitioners beginning, until the number shall be reduced to thirteen; and from that number not less than
+              seven, nor more than nine names as congress shall direct, shall in the presence of congress be drawn out
+              by
+              lot, and the persons whose names shall be so drawn or any five of them, shall be commissioners or judges,
+              to
+              hear and finally determine the controversy, so always as a major part of the judges who shall hear the
+              cause
+              shall agree in the determination: and if either party shall neglect to attend at the day appointed,
+              without
+              showing reasons, which congress shall judge sufficient, or being present shall refuse to strike, the
+              congress shall proceed to nominate three persons out of each state, and the secretary of congress shall
+              strike in behalf of such party absent or refusing; and the judgment and sentence of the court to be
+              appointed, in the manner before prescribed, shall be final and conclusive; and if any of the parties shall
+              refuse to submit to the authority of such court, or to appear or defend their claim or cause, the court
+              shall nevertheless proceed to pronounce sentence, or judgment, which shall in like manner be final and
+              decisive, the judgment or sentence and other proceedings being in either case transmitted to congress, and
+              lodged among the acts of congress for the security of the parties concerned: provided that every
+              commissioner, before he sits in judgment, shall take an oath to be administered by one of the judges of
+              the
+              supreme or superior court of the state, where the cause shall be tried, "well and truly to hear and
+              determine the matter in question, according to the best of his judgment, without favour, affection or hope
+              of reward:" provided also, that no state shall be deprived of territory for the benefit of the united
+              states.</p>
+            <p> All controversies concerning the private right of soil claimed under different grants of two or
+              more states, whose jurisdictions as they may respect such lands, and the states which passed such grants
+              are adjusted, the said grants or either of them being at the same time claimed to have originated
+              antecedent to such settlement of jurisdiction, shall on the petition of either party to the congress of
+              the united states, be finally determined as near as may be in the same manner as is before prescribed
+              for deciding disputes respecting territorial jurisdiction between different states.</p>
+            <p> The united states
+              in congress assembled shall also have the sole and exclusive right and power of regulating the alloy
+              and value of coin struck by their own authority, or by that of the respective states &mdash; fixing
+              the standard of weights and measures throughout the united states &mdash; regulating the trade and
+              managing all affairs with the Indians, not members of any of the states, provided that the
+              legislative right of any state within its own limits be not infringed or violated &mdash;
+              establishing or regulating post offices from one state to another, throughout all the united states,
+              and exacting such postage on the papers passing thro' the same as may be requisite to defray the
+              expences of the said office &mdash; appointing all officers of the land forces, in the service of
+              the united states, excepting regimental officers &mdash; appointing all the officers of the naval
+              forces, and commissioning all officers whatever in the service of the united states &mdash; making
+              rules for the government and regulation of the said land and naval forces, and directing their
+              operations.</p>
+            <p>The united states in congress assembled shall have authority to appoint a committee, to sit in the
+              recess of congress, to be denominated "A Committee of the States," and to consist of one delegate
+              from each state; and to appoint such other committees and civil officers as may be necessary for
+              managing the general affairs of the united states under their direction &mdash; to appoint one of
+              their number to preside, provided that no person be allowed to serve in the office of president more
+              than one year in any term of three years; to ascertain the necessary sums of money to be raised for
+              the service of the united states, and to appropriate and apply the same for defraying the public
+              expences to borrow money, or emit bills on the credit of the united states, transmitting every half
+              year to the respective states an account of the sums of money so borrowed or emitted, &mdash; to
+              build and equip a navy &mdash; to agree upon the number of land forces, and to make requisitions
+              from each state for its quota, in proportion to the number of white inhabitants in such state; which
+              requisition shall be binding, and thereupon the legislature of each state shall appoint the
+              regimental officers, raise the men and cloth, arm and equip them in a soldier like manner, at the
+              expence of the united states; and the officers and men so cloathed, armed and quipped shall march to
+              the place appointed, and within the time agreed on by the united states in congress assembled: But
+              if the united states in congress assembled shall, on consideration of circumstances judge proper
+              that any state should not raise men, or should raise a smaller number than its quota, and that any
+              other state should raise a greater number of men than the quota thereof, such extra number shall be
+              raised, officered, cloathed, armed and equipped in the same manner as the quota of such state,
+              unless the legislature of such sta te shall judge that such extra number cannot be safely spared out
+              of the same, in which case they shall raise officer, cloath, arm and equip as many of such extra
+              number as they judge can be safely spared. And the officers and men so cloathed, armed and equipped,
+              shall march to the place appointed, and within the time agreed on by the united states in congress
+              assembled.</p>
+            <p> The united states in congress assembled shall never engage in a war, nor grant letters
+              of marque and reprisal in time of peace, nor enter into any treaties or alliances, nor coin
+              money, nor regulate the value thereof, nor ascertain the sums and expences necessary for the
+              defence and welfare of the united states, or any of them, nor emit bills, nor borrow money on
+              the credit of the united states, nor appropriate money, nor agree upon the number of vessels of
+              war, to be built or purchased, or the number of land or sea forces to be raised, nor appoint a
+              commander in chief of the army or navy, unless nine states assent to the same: nor shall a
+              question on any other point, except for adjourning from day to day be determined, unless by the
+              votes of a majority of the united states in congress assembled.</p>
+            <p> The congress of the united
+              states shall have power to adjourn to any time within the year, and to any place within the
+              united states, so that no period of adjournment be for a longer duration than the space of
+              six Months, and shall publish the Journal of their proceedings monthly, except such parts
+              thereof relating to treaties, alliances or military operations, as in their judgment require
+              secrecy; and the yeas and nays of the delegates of each state on any question shall be
+              entered on the Journal, when it is desired by any delegate; and the delegates of a state, or
+              any of them, at his or their request shall be furnished with a transcript of the said
+              Journal, except such parts as are above excepted, to lay before the legislatures of the
+              several states.</p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleX">
+          <h1><strong>Article X</strong></h1>
+          <section>
+            <p>The committee of the states, or any nine of them, shall be
+              authorized to execute, in the recess of congress, such of the powers of congress as the united
+              states in congress assembled, by the consent of nine states, shall from time to time think
+              expedient to vest them with; provided that no power be delegated to the said committee, for the
+              exercise of which, by the articles of confederation, the voice of nine states in the congress of
+              the united states assembled is requisite.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleXI">
+          <h1><strong>Article XI</strong></h1>
+          <section>
+            <p>Canada acceding to this confederation, and joining in the
+              measures
+              of the united states, shall be admitted into, and entitled to all the advantages of this union: but
+              no other colony shall be admitted into the same, unless such admission be agreed to by nine states.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleXII">
+          <h1><strong>Article XII</strong></h1>
+          <section>
+            <p>All bills of credit emitted, monies borrowed and debts contracted
+              by,
+              or under the authority of congress, before the assembling of the united states, in pursuance of the
+              present confederation, shall be deemed and considered as a charge against the united states, for payment
+              and satisfaction whereof the said united states, and the public faith are hereby solemnly pledged.
+            </p>
+          </section>
+        </article>
+        <article>
+          <hr id="oldArticleXIII">
+          <h1><strong>Article XIII</strong></h1>
+          <section>
+            <p>Every state shall abide by the determinations of the united states in
+              congress assembled, on all questions which by this confederation are submitted to them. And the Articles
+              of
+              this confederation shall be inviolably observed by every state, and the union shall be perpetual; nor
+              shall
+              any alteration at any time hereafter be made in any of them; unless such alteration be agreed to in a
+              congress of the united states, and be afterwards confirmed by the legislatures of every state.</p>
+            <p> And
+              Whereas it hath pleased the Great Governor of the World to incline the hearts of the legislatures we
+              respectively represent in congress, to approve of, and to authorize us to ratify the said articles of
+              confederation and perpetual union. Know Ye that we the undersigned delegates, by virtue of the power and
+              authority to us given for that pur pose, do by these presents, in the name and in behalf of our
+              respective constituents, fully and entirely ratify and confirm each and every of the said articles of
+              confederation and perpetual union, and all and singular the matters and things therein contained: And we
+              do further solemnly plight and engage the faith of our respective constituents, that they shall abide by
+              the determinations of the united states in congress assembled, on all questions, which by the said
+              confederation are submitted to them. And that the articles thereof shall be inviolably observed by the
+              states we respectively represent, and that the union shall be perpetual.</p>
+            <p>In Witness whereof we have hereunto set our hands in Congress. Done at Philadelphia in the state of
+              Pennsylvania the ninth day of July in the Year of our Lord one Thousand seven Hundred and Seventy-eight,
+              and in the third year of the independence of America.</p>
+          </section>
+        </article>
+        <article>
+          <section>
+            <p>On the part of & behalf of the State of New Hampshire:<ul class="confederation-signers">
+                <li>Josiah Bartlett</li>
+                <li>John Wentworth. Junr; August 8th, 1778</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Rhode-Island and Providence Plantations:<ul
+                class="confederation-signers">
+                <li>William Ellery</li>
+                <li>Henry Marchant</li>
+                <li>John Collins</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of New York:<ul class="confederation-signers">
+                <li>Jas Duane</li>
+                <li>Fra: Lewis</li>
+                <li>Wm Duer</li>
+                <li>Gouvr Morris</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Pennsylvania:<ul class="confederation-signers">
+                <li>Robert Morris</li>
+                <li>Daniel Roberdeau</li>
+                <li>Jon. Bayard Smith</li>
+                <li>William Clingan</li>
+                <li>Joseph Reed; 22d July, 1778</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Maryland:<ul class="confederation-signers">
+                <li>John Hanson; March 1, 1781</li>
+                <li>Daniel Carroll, do.</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of North Carolina:<ul class="confederation-signers">
+                <li>John Penn; July 21st, 1778</li>
+                <li>Corns Harnett</li>
+                <li>Jno Williams</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Georgia:<ul class="confederation-signers">
+                <li>Jno Walton; 24th July, 1778</li>
+                <li>Edwd Telfair</li>
+                <li>Edwd Langworthy</li>
+              </ul>
+            </p>
+            <p>On the part of & behalf of the State of Massachusetts Bay:<ul class="confederation-signers">
+                <li>John Hancock</li>
+                <li>Samuel Adams</li>
+                <li>Elbridge Gerry</li>
+                <li>Francis Dana</li>
+                <li>James Lovell</li>
+                <li>Samuel Holten</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Connecticut:<ul class="confederation-signers">
+                <li>Roger Sherman</li>
+                <li>Samuel Huntington</li>
+                <li>Oliver Wolcott</li>
+                <li>Titus Hosmer</li>
+                <li>Andrew Adams</li>
+              </ul>
+            </p>
+            <p>On the Part and in Behalf of the State of New Jersey, November 26th, 1778:<ul
+                class="confederation-signers">
+                <li>Jno Witherspoon</li>
+                <li>Nathl Scudder</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Delaware:<ul class="confederation-signers">
+                <li>Thos McKean; Febr 22d, 1779</li>
+                <li>John Dickinson; May 5th, 1779</li>
+                <li>Nicholas Van Dyke</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of Virginia:<ul class="confederation-signers">
+                <li>Richard Henry Lee</li>
+                <li>John Banister</li>
+                <li>Thomas Adams</li>
+                <li>Jno Harvie</li>
+                <li>Francis Lightfoot Lee</li>
+              </ul>
+            </p>
+            <p>On the part and behalf of the State of South Carolina:<ul class="confederation-signers">
+                <li>Henry Laurens</li>
+                <li>William Henry Drayton</li>
+                <li>Jno Mathews</li>
+                <li>Richd Hutson</li>
+                <li>Thos Heyward, junr.</li>
+              </ul>
+            </p>
+          </section>
+        </article>
       </div>
     </main>
     <bookmark-manager id="bookmarksManager">
