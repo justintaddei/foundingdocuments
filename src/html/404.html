@@ -9,8 +9,23 @@ permalink: /404.html
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Redirecting</title>
 
+
+    <style>
+        body {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
     <script>
         localStorage.setItem('redir_path', location.pathname)
+        location.replace('/constitution/')
     </script>
 </head>
 
