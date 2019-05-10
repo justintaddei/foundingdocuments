@@ -18,7 +18,7 @@ let DEST = {
   ES6: "./build/es6",
   JSON: "./build/json",
   HTML: "./build",
-  STATIC: "./build",
+  ROOT: "./build",
   IMGS: "./build/imgs"
 };
 
@@ -29,7 +29,7 @@ if (process.argv.indexOf("--production") === -1) {
     ES6: "./build/constitution/es6",
     JSON: "./build/constitution/json",
     HTML: "./build/constitution",
-    STATIC: "./build/constitution",
+    ROOT: "./build/constitution",
     IMGS: "./build/constitution/imgs"
   };
 }
@@ -58,24 +58,44 @@ function js() {
 }
 
 function es6() {
-  return gulp
-    .src("./src/js/*.js")
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(
-      rollup(
-        {
-          plugins: [node(), cjs()]
-        },
-        "iife"
-      )
-    )
-    .pipe(
-      sourcemaps.write("./maps", {
-        sourceMappingURLPrefix: "/es6"
-      })
-    )
-    .pipe(gulp.dest(DEST.ES6));
+  return Promise.all(
+    [
+      gulp
+        .src("./src/js/*.js")
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(
+          rollup(
+            {
+              plugins: [node(), cjs()]
+            },
+            "iife"
+          )
+        )
+        .pipe(
+          sourcemaps.write("./maps", {
+            sourceMappingURLPrefix: "/es6"
+          })
+        )
+        .pipe(gulp.dest(DEST.ES6))
+    ],
+    [
+      gulp
+        .src("./src/service-worker.js")
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(
+          rollup(
+            {
+              plugins: [node(), cjs()]
+            },
+            "iife"
+          )
+        )
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(DEST.ROOT))
+    ]
+  );
 }
 
 function scss() {
@@ -126,7 +146,7 @@ function polyfills() {
   return gulp
     .src(["./src/polyfills/**/*"])
     .pipe(plumber())
-    .pipe(gulp.dest(DEST.STATIC));
+    .pipe(gulp.dest(DEST.ROOT));
 }
 
 function watch() {
@@ -139,6 +159,7 @@ function watch() {
   gulp
     .watch(["./src/js/**/*.js"], gulp.parallel(js, es6))
     .on("change", browserSync.reload);
+  gulp.watch(["./src/service-worker.js"], es6).on("change", browserSync.reload);
   gulp.watch(["./src/html/**/*.html"], html).on("change", browserSync.reload);
   gulp.watch(["./src/json/**/*.json"], json).on("change", browserSync.reload);
   gulp.watch(["./src/imgs/**/*.*"], imgs).on("change", browserSync.reload);

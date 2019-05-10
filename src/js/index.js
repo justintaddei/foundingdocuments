@@ -22,6 +22,9 @@ route("/bill-of-rights", () => {
 route("/articles-of-confederation", () => {
   seek(document.querySelector("#oldPreamble"));
 });
+route("/about", () => {
+  seek(document.querySelector("#about"));
+});
 
 route("/article/*", article => {
   const articleHeading = document.querySelector(`#article${article}`);
