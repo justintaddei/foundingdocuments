@@ -8,7 +8,8 @@ export function seek(elem) {
   const top = elem.getBoundingClientRect().top + window.pageYOffset;
 
   window.scrollTo({
-    top: top - Math.min(200, window.innerHeight / 3),
+    top: top - 200,
+    // top: top - Math.min(200, window.innerHeight / 3),
     behavior: "smooth"
   });
   // elem.scrollIntoView({ behavior: "smooth", block: "start" });
