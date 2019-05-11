@@ -11,7 +11,13 @@ const plumber = require("gulp-plumber");
 const autoprefixer = require("gulp-autoprefixer");
 const cssInlineImages = require("gulp-css-inline-images");
 const browserSync = require("browser-sync").create();
+const replace = require("gulp-replace");
+const pkg = require("./package.json");
+const { readFileSync } = require("fs");
 
+/**
+ * Output locations for file types.
+ */
 let DEST = {
   CSS: "./build/css",
   JS: "./build/js",
@@ -34,6 +40,9 @@ if (process.argv.indexOf("--production") === -1) {
   };
 }
 
+/**
+ * Complies scripts with babel and copies to `./build/es6`
+ */
 function js() {
   return gulp
     .src(["./src/js/index.js", "./src/js/utils/polyfills.js"])
@@ -57,47 +66,54 @@ function js() {
     .pipe(gulp.dest(DEST.JS));
 }
 
+/**
+ * Complies scripts to `./build/es6`
+ */
 function es6() {
-  return Promise.all(
-    [
-      gulp
-        .src("./src/js/*.js")
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(
-          rollup(
-            {
-              plugins: [node(), cjs()]
-            },
-            "iife"
-          )
-        )
-        .pipe(
-          sourcemaps.write("./maps", {
-            sourceMappingURLPrefix: "/es6"
-          })
-        )
-        .pipe(gulp.dest(DEST.ES6))
-    ],
-    [
-      gulp
-        .src("./src/service-worker.js")
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(
-          rollup(
-            {
-              plugins: [node(), cjs()]
-            },
-            "iife"
-          )
-        )
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(DEST.ROOT))
-    ]
-  );
+  return gulp
+    .src("./src/js/*.js")
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(
+      rollup(
+        {
+          plugins: [node(), cjs()]
+        },
+        "iife"
+      )
+    )
+    .pipe(
+      sourcemaps.write("./maps", {
+        sourceMappingURLPrefix: "/es6"
+      })
+    )
+    .pipe(gulp.dest(DEST.ES6));
 }
 
+/**
+ * Copies the service worker to `./build`
+ */
+function sw() {
+  return gulp
+    .src("./src/service-worker.js")
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(
+      rollup(
+        {
+          plugins: [node(), cjs()]
+        },
+        "iife"
+      )
+    )
+    .pipe(sourcemaps.write("."))
+    .pipe(replace("{%VERSION%}", pkg.version))
+    .pipe(gulp.dest(DEST.ROOT));
+}
+
+/**
+ * Compiles all .scss files to `./build/css`
+ */
 function scss() {
   const wait = require("gulp-wait");
   return gulp
@@ -127,21 +143,32 @@ function scss() {
     .pipe(browserSync.stream());
 }
 
+/**
+ * Copies the contents of `./src/imgs` to `./build/imgs`
+ */
 function imgs() {
-  return gulp.src("./src/imgs/**/*.*").pipe(gulp.dest(DEST.IMGS));
+  return gulp.src("./src/imgs/**/*").pipe(gulp.dest(DEST.IMGS));
 }
 
-function json() {
-  return gulp.src("./src/json/**/*.json").pipe(gulp.dest(DEST.JSON));
-}
-
+/**
+ * Copies the contents of `./src/html` to `./build`
+ */
 function html() {
   return gulp
-    .src(["./src/html/**/*.*"])
+    .src(["./src/html/**/*"])
     .pipe(plumber())
+    .pipe(
+      // Replace "{{markup location}} with the file contents"
+      replace(/{{([\w\d\-]+)}}/g, (_, $1) => {
+        return readFileSync(`./src/html/${$1}_markup.html`).toString();
+      })
+    )
     .pipe(gulp.dest(DEST.HTML));
 }
 
+/**
+ * Copies the contents of `./src/polyfills` to `./build`
+ */
 function polyfills() {
   return gulp
     .src(["./src/polyfills/**/*"])
@@ -149,6 +176,9 @@ function polyfills() {
     .pipe(gulp.dest(DEST.ROOT));
 }
 
+/**
+ * Sets BrowserSync to proxy `localhost` and watches files.
+ */
 function watch() {
   browserSync.init({
     proxy: "localhost",
@@ -159,18 +189,22 @@ function watch() {
   gulp
     .watch(["./src/js/**/*.js"], gulp.parallel(js, es6))
     .on("change", browserSync.reload);
-  gulp.watch(["./src/service-worker.js"], es6).on("change", browserSync.reload);
+  gulp.watch(["./src/service-worker.js"], sw).on("change", browserSync.reload);
   gulp.watch(["./src/html/**/*.html"], html).on("change", browserSync.reload);
-  gulp.watch(["./src/json/**/*.json"], json).on("change", browserSync.reload);
   gulp.watch(["./src/imgs/**/*.*"], imgs).on("change", browserSync.reload);
 }
 
+/**
+ * Deletes the contents of `./build`
+ */
 function clean() {
   const del = require("del");
   return del(["build/*", "!build"], { force: true });
 }
 
+exports.html = html;
+
 exports.clean = clean;
-exports.build = gulp.parallel(js, es6, scss, imgs, html, json, polyfills);
+exports.build = gulp.parallel(js, es6, sw, scss, imgs, html, polyfills);
 exports.refresh = gulp.series(clean, exports.build);
 exports.watch = gulp.series(exports.refresh, watch);

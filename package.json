@@ -2,12 +2,12 @@
   "name": "usconstitution",
   "version": "1.0.0",
   "description": "United States Constitution",
-  "main": "src/index.php",
+  "main": "src/html/index.html",
   "scripts": {
     "build": "gulp build --production"
   },
   "author": "Justin Taddei",
-  "license": "Unlicense",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-transform-regenerator": "^7.4.4",
@@ -23,6 +23,7 @@
     "gulp-css-inline-images": "^0.1.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
