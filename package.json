@@ -1,7 +1,7 @@
 {
-  "name": "usconstitution",
-  "version": "1.0.0",
-  "description": "United States Constitution",
+  "name": "foundingdocuments",
+  "version": "0.1.0",
+  "description": "United States Founding Documents",
   "main": "src/html/index.html",
   "scripts": {
     "build": "gulp build --production"
