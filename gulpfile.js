@@ -30,13 +30,13 @@ let DEST = {
 
 if (process.argv.indexOf("--production") === -1) {
   DEST = {
-    CSS: "./build/constitution/css",
-    JS: "./build/constitution/js",
-    ES6: "./build/constitution/es6",
-    JSON: "./build/constitution/json",
-    HTML: "./build/constitution",
-    ROOT: "./build/constitution",
-    IMGS: "./build/constitution/imgs"
+    CSS: "./build/foundingdocuments/css",
+    JS: "./build/foundingdocuments/js",
+    ES6: "./build/foundingdocuments/es6",
+    JSON: "./build/foundingdocuments/json",
+    HTML: "./build/foundingdocuments",
+    ROOT: "./build/foundingdocuments",
+    IMGS: "./build/foundingdocuments/imgs"
   };
 }
 

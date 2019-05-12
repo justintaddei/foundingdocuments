@@ -1,37 +1,37 @@
 const ASSETS = [
-  "/constitution",
-  "/constitution/index.html",
-  "/constitution/",
-  "/constitution/404.html",
-  "/constitution/es6/index.js",
-  "/constitution/js/index.js",
-  "/constitution/webcomponents-loader.js",
-  "/constitution/bundles/webcomponents-ce.js",
-  "/constitution/bundles/webcomponents-sd-ce-pf.js",
-  "/constitution/bundles/webcomponents-sd-ce.js",
-  "/constitution/bundles/webcomponents-sd.js",
-  "/constitution/js/polyfills.js",
-  "/constitution/css/index.css",
-  "/constitution/imgs/seal.svg",
-  "/constitution/imgs/gadsden.svg",
-  "/constitution/imgs/us_flag.svg",
-  "/constitution/imgs/first-flag.svg",
-  "/constitution/imgs/logo.png",
-  "/constitution/imgs/symbols/1.svg",
-  "/constitution/imgs/symbols/2.svg",
-  "/constitution/imgs/symbols/3.svg",
-  "/constitution/imgs/symbols/4.svg",
-  "/constitution/imgs/symbols/5.svg",
-  "/constitution/imgs/symbols/6.svg",
-  "/constitution/imgs/symbols/7.svg",
-  "/constitution/imgs/symbols/8.svg",
-  "/constitution/imgs/symbols/9.svg",
-  "/constitution/imgs/symbols/10.svg",
-  "/constitution/imgs/symbols/11.svg",
-  "/constitution/imgs/symbols/12.svg",
-  "/constitution/imgs/icons/android-chrome-512x512.png",
-  "/constitution/imgs/icons/android-chrome-192x192.png",
-  "/constitution/imgs/icons/site.webmanifest"
+  "/foundingdocuments",
+  "/foundingdocuments/index.html",
+  "/foundingdocuments/",
+  "/foundingdocuments/404.html",
+  "/foundingdocuments/es6/index.js",
+  "/foundingdocuments/js/index.js",
+  "/foundingdocuments/webcomponents-loader.js",
+  "/foundingdocuments/bundles/webcomponents-ce.js",
+  "/foundingdocuments/bundles/webcomponents-sd-ce-pf.js",
+  "/foundingdocuments/bundles/webcomponents-sd-ce.js",
+  "/foundingdocuments/bundles/webcomponents-sd.js",
+  "/foundingdocuments/js/polyfills.js",
+  "/foundingdocuments/css/index.css",
+  "/foundingdocuments/imgs/seal.svg",
+  "/foundingdocuments/imgs/gadsden.svg",
+  "/foundingdocuments/imgs/us_flag.svg",
+  "/foundingdocuments/imgs/first-flag.svg",
+  "/foundingdocuments/imgs/logo.png",
+  "/foundingdocuments/imgs/symbols/1.svg",
+  "/foundingdocuments/imgs/symbols/2.svg",
+  "/foundingdocuments/imgs/symbols/3.svg",
+  "/foundingdocuments/imgs/symbols/4.svg",
+  "/foundingdocuments/imgs/symbols/5.svg",
+  "/foundingdocuments/imgs/symbols/6.svg",
+  "/foundingdocuments/imgs/symbols/7.svg",
+  "/foundingdocuments/imgs/symbols/8.svg",
+  "/foundingdocuments/imgs/symbols/9.svg",
+  "/foundingdocuments/imgs/symbols/10.svg",
+  "/foundingdocuments/imgs/symbols/11.svg",
+  "/foundingdocuments/imgs/symbols/12.svg",
+  "/foundingdocuments/imgs/icons/android-chrome-512x512.png",
+  "/foundingdocuments/imgs/icons/android-chrome-192x192.png",
+  "/foundingdocuments/imgs/icons/site.webmanifest"
 ];
 
 const VERSION = "{%VERSION%}";
@@ -81,7 +81,7 @@ self.addEventListener("fetch", event => {
         // Fall back to network
         return await networkResponsePromise;
       } catch (err) {
-        return caches.match("/constitution/index.html");
+        return caches.match("/foundingdocuments/index.html");
       }
     })()
   );

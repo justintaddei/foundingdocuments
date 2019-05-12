@@ -60,7 +60,7 @@ document.querySelector("aside").addEventListener("click", e => {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/constitution/service-worker.js")
+    .register("/foundingdocuments/service-worker.js")
     .then(() => {
       if (!localStorage.getItem("offline-prompt")) {
         toast("Available offline", { label: "Ok" }, 10000);
@@ -72,5 +72,5 @@ if ("serviceWorker" in navigator) {
     });
 }
 
-route.base("/constitution/");
+route.base("/foundingdocuments/");
 route.start(true);
