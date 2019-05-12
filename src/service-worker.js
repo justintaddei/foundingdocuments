@@ -1,37 +1,37 @@
 const ASSETS = [
-  "/foundingdocuments",
-  "/foundingdocuments/index.html",
-  "/foundingdocuments/",
-  "/foundingdocuments/404.html",
-  "/foundingdocuments/es6/index.js",
-  "/foundingdocuments/js/index.js",
-  "/foundingdocuments/webcomponents-loader.js",
-  "/foundingdocuments/bundles/webcomponents-ce.js",
-  "/foundingdocuments/bundles/webcomponents-sd-ce-pf.js",
-  "/foundingdocuments/bundles/webcomponents-sd-ce.js",
-  "/foundingdocuments/bundles/webcomponents-sd.js",
-  "/foundingdocuments/js/polyfills.js",
-  "/foundingdocuments/css/index.css",
-  "/foundingdocuments/imgs/seal.svg",
-  "/foundingdocuments/imgs/gadsden.svg",
-  "/foundingdocuments/imgs/us_flag.svg",
-  "/foundingdocuments/imgs/first-flag.svg",
-  "/foundingdocuments/imgs/logo.png",
-  "/foundingdocuments/imgs/symbols/1.svg",
-  "/foundingdocuments/imgs/symbols/2.svg",
-  "/foundingdocuments/imgs/symbols/3.svg",
-  "/foundingdocuments/imgs/symbols/4.svg",
-  "/foundingdocuments/imgs/symbols/5.svg",
-  "/foundingdocuments/imgs/symbols/6.svg",
-  "/foundingdocuments/imgs/symbols/7.svg",
-  "/foundingdocuments/imgs/symbols/8.svg",
-  "/foundingdocuments/imgs/symbols/9.svg",
-  "/foundingdocuments/imgs/symbols/10.svg",
-  "/foundingdocuments/imgs/symbols/11.svg",
-  "/foundingdocuments/imgs/symbols/12.svg",
-  "/foundingdocuments/imgs/icons/android-chrome-512x512.png",
-  "/foundingdocuments/imgs/icons/android-chrome-192x192.png",
-  "/foundingdocuments/imgs/icons/site.webmanifest"
+  "{%ROOT%}",
+  "{%ROOT%}/index.html",
+  "{%ROOT%}/",
+  "{%ROOT%}/404.html",
+  "{%ROOT%}/es6/index.js",
+  "{%ROOT%}/js/index.js",
+  "{%ROOT%}/webcomponents-loader.js",
+  "{%ROOT%}/bundles/webcomponents-ce.js",
+  "{%ROOT%}/bundles/webcomponents-sd-ce-pf.js",
+  "{%ROOT%}/bundles/webcomponents-sd-ce.js",
+  "{%ROOT%}/bundles/webcomponents-sd.js",
+  "{%ROOT%}/js/polyfills.js",
+  "{%ROOT%}/css/index.css",
+  "{%ROOT%}/imgs/seal.svg",
+  "{%ROOT%}/imgs/gadsden.svg",
+  "{%ROOT%}/imgs/us_flag.svg",
+  "{%ROOT%}/imgs/first-flag.svg",
+  "{%ROOT%}/imgs/logo.png",
+  "{%ROOT%}/imgs/symbols/1.svg",
+  "{%ROOT%}/imgs/symbols/2.svg",
+  "{%ROOT%}/imgs/symbols/3.svg",
+  "{%ROOT%}/imgs/symbols/4.svg",
+  "{%ROOT%}/imgs/symbols/5.svg",
+  "{%ROOT%}/imgs/symbols/6.svg",
+  "{%ROOT%}/imgs/symbols/7.svg",
+  "{%ROOT%}/imgs/symbols/8.svg",
+  "{%ROOT%}/imgs/symbols/9.svg",
+  "{%ROOT%}/imgs/symbols/10.svg",
+  "{%ROOT%}/imgs/symbols/11.svg",
+  "{%ROOT%}/imgs/symbols/12.svg",
+  "{%ROOT%}/imgs/icons/android-chrome-512x512.png",
+  "{%ROOT%}/imgs/icons/android-chrome-192x192.png",
+  "{%ROOT%}/imgs/icons/site.webmanifest"
 ];
 
 const VERSION = "{%VERSION%}";
@@ -81,7 +81,7 @@ self.addEventListener("fetch", event => {
         // Fall back to network
         return await networkResponsePromise;
       } catch (err) {
-        return caches.match("/foundingdocuments/index.html");
+        return caches.match("{%ROOT%}/index.html");
       }
     })()
   );

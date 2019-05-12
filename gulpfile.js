@@ -16,6 +16,12 @@ const pkg = require("./package.json");
 const { readFileSync } = require("fs");
 
 /**
+ * The root of the app
+ */
+const pageRoot = "/foundingdocuments";
+const pageRootVar = "{%ROOT%}";
+
+/**
  * Output locations for file types.
  */
 let DEST = {
@@ -63,6 +69,7 @@ function js() {
         sourceMappingURLPrefix: "/js"
       })
     )
+    .pipe(replace(pageRootVar, pageRoot))
     .pipe(gulp.dest(DEST.JS));
 }
 
@@ -87,6 +94,7 @@ function es6() {
         sourceMappingURLPrefix: "/es6"
       })
     )
+    .pipe(replace(pageRootVar, pageRoot))
     .pipe(gulp.dest(DEST.ES6));
 }
 
@@ -108,6 +116,7 @@ function sw() {
     )
     .pipe(sourcemaps.write("."))
     .pipe(replace("{%VERSION%}", pkg.version))
+    .pipe(replace(pageRootVar, pageRoot))
     .pipe(gulp.dest(DEST.ROOT));
 }
 
@@ -147,7 +156,10 @@ function scss() {
  * Copies the contents of `./src/imgs` to `./build/imgs`
  */
 function imgs() {
-  return gulp.src("./src/imgs/**/*").pipe(gulp.dest(DEST.IMGS));
+  return gulp
+    .src("./src/imgs/**/*")
+    .pipe(replace(pageRootVar, pageRoot))
+    .pipe(gulp.dest(DEST.IMGS));
 }
 
 /**
@@ -163,6 +175,7 @@ function html() {
         return readFileSync(`./src/html/${$1}_markup.html`).toString();
       })
     )
+    .pipe(replace(pageRootVar, pageRoot))
     .pipe(gulp.dest(DEST.HTML));
 }
 
