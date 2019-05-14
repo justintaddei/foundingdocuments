@@ -91,6 +91,18 @@ hr[id] {
   }
 }
 
+.to-from {
+  opacity: 0.7;
+  a {
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
 @import "typography";
 @import "layout";
 @import "./components/aside";

@@ -50,6 +50,10 @@ document.addEventListener("pointerup", () => {
   localStorage.setItem("lastRead", window.pageYOffset);
 });
 
+document.addEventListener("blur", () => {
+  localStorage.setItem("lastRead", window.pageYOffset);
+});
+
 class USConstitutionElement extends HTMLElement {
   constructor() {
     super();
