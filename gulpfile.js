@@ -15,11 +15,21 @@ const replace = require("gulp-replace");
 const pkg = require("./package.json");
 const { readFileSync } = require("fs");
 
+const VERSION =
+  // Use arg to test updating the app without editing package.json
+  process.argv.indexOf("--dev-version") !== -1
+    ? process.argv[process.argv.indexOf("--dev-version") + 1]
+    : pkg.version;
+
+console.log(VERSION);
+
 /**
  * The root of the app
  */
 const pageRoot = "/foundingdocuments";
 const pageRootVar = "{%ROOT%}";
+
+const IS_PRODUCTION = process.argv.indexOf("--production") !== -1;
 
 /**
  * Output locations for file types.
@@ -34,7 +44,7 @@ let DEST = {
   IMGS: "./build/imgs"
 };
 
-if (process.argv.indexOf("--production") === -1) {
+if (!IS_PRODUCTION) {
   DEST = {
     CSS: "./build/foundingdocuments/css",
     JS: "./build/foundingdocuments/js",
@@ -115,7 +125,7 @@ function sw() {
       )
     )
     .pipe(sourcemaps.write("."))
-    .pipe(replace("{%VERSION%}", pkg.version))
+    .pipe(replace("{%VERSION%}", VERSION))
     .pipe(replace(pageRootVar, pageRoot))
     .pipe(gulp.dest(DEST.ROOT));
 }
@@ -173,6 +183,13 @@ function html() {
       // Replace "{{markup location}} with the file contents"
       replace(/{{([\w\d\-]+)}}/g, (_, $1) => {
         return readFileSync(`./src/html/${$1}_markup.html`).toString();
+      })
+    )
+    .pipe(
+      replace(/\[\[([\w\d\-]+)\]\]/g, (_, $1) => {
+        return IS_PRODUCTION
+          ? readFileSync(`./src/html/${$1}_prod.html`).toString()
+          : "";
       })
     )
     .pipe(replace(pageRootVar, pageRoot))
